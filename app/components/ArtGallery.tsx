@@ -1,5 +1,5 @@
 "use client";
-//import Image from 'next/image';
+import Image from 'next/image';
 import React from "react";
 
 const ArtGallery = () => {
@@ -15,69 +15,69 @@ const ArtGallery = () => {
             justifyItems: "center",
           }}
         >
-          <img
+          <Image
             src="/art/bp.jpeg"
             alt="Black Panther Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-                    <img
+                    <Image
             src="/art/dws.jpeg"
             alt="Die With A Smile Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-                    <img
+                    <Image
             src="/art/chandler.jpeg"
             alt="Chandler Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-                    <img
+                    <Image
             src="/art/dv.jpeg"
             alt="Darth Vader Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-                    <img
+                    <Image
             src="/art/strange.jpeg"
             alt="Doctor Strange Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-                    <img
+                    <Image
             src="/art/mk.jpeg"
             alt="Moon Knight Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-                    <img
+                    <Image
             src="/art/spidergewn.jpeg"
             alt="Spider Gwen"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-          <img
+          <Image
             src="/art/messi.jpeg"
             alt="Messi Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-          <img
+          <Image
             src="/art/3spiderman.jpeg"
             alt="3 Spidermen"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
 
-          <img
+          <Image
             src="/art/alvarez.jpeg"
             alt="Alvarez Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-          <img
+          <Image
             src="/art/lucifer.jpeg"
             alt="Lucifer Silhouette"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
 
-          <img
+          <Image
             src="/art/painting1.jpeg"
             alt="Painting 1"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
-          <img
+          <Image
             src="/art/painting2.jpeg"
             alt="Painting 2"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
