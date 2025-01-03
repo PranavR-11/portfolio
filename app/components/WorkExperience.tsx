@@ -10,10 +10,10 @@ const WorkExperience = () => {
           <p className="text-blue-400 mb-1">Rezolve AI</p>
           <p className="text-sm text-gray-400">Jan 24 - Feb 24</p>
           <p className="mt-4 text-gray-300">
-            • Implemented branch-per-ticket strategy for efficient code
+            &bull; Implemented branch-per-ticket strategy for efficient code
             management based on a React application. <br />
-            • Executed multiple UI changes with a focus on Tailwind CSS. <br />
-            • Merged branches, pushed changes to Atlassian Bitbucket, and
+            &bull; Executed multiple UI changes with a focus on Tailwind CSS. <br />
+            &bull; Merged branches, pushed changes to Atlassian Bitbucket, and
             initiated Pull Requests for streamlined collaboration.
           </p>
         </div>
@@ -22,23 +22,22 @@ const WorkExperience = () => {
           <p className="text-blue-400 mb-1">Wipro Ltd</p>
           <p className="text-sm text-gray-400">Jul 2023 - Oct 2023</p>
           <p className="mt-4 text-gray-300">
-            • Collaborated and developed on an internal portal, utilizing React,
+            &bull; Collaborated and developed on an internal portal, utilizing React,
             Vite, Node.js/Express.js, SQL, and Azure. <br />
-            • Significantly enhanced internal resource tracking, project
+            &bull; Significantly enhanced internal resource tracking, project
             utilization, and data-driven decision-making, boosting operational
             efficiency. <br />
-            • Utilized React to develop a dynamic dashboard frontend. Used Axios
+            &bull; Utilized React to develop a dynamic dashboard frontend. Used Axios
             for asynchronous data fetching. Used React Navigation for seamless
             user navigation. Leveraged Bootstrap to create an effective User
             Interface. <br />
-            • Managed the deployment on Azure, ensuring high availability and
+            &bull; Managed the deployment on Azure, ensuring high availability and
             scalability while integrating Azure Functions for dynamic scaling.
             The backend utilized MS SQL as the relational database, managed
             through SQL Server Management Studio. <br />
-            • Integrated Role-Based Access Control through Azure Active
-            Directory, ensuring Granular Access Control and secure data access.{" "}
-            <br />
-            • Significantly improved operational efficiency and implemented
+            &bull; Integrated Role-Based Access Control through Azure Active
+            Directory, ensuring Granular Access Control and secure data access. <br />
+            &bull; Significantly improved operational efficiency and implemented
             robust financial tracking in the portal.
           </p>
         </div>
@@ -47,11 +46,11 @@ const WorkExperience = () => {
           <p className="text-blue-400 mb-1">Forfend Cybernatics</p>
           <p className="text-sm text-gray-400">Jun 2023 - Jul 2023</p>
           <p className="mt-4 text-gray-300">
-            • Utilized advanced low-code development skills in Zoho Creator to architect, develop, and deploy a "Mining Management System" (MMS) with QR-code-based route tracking, showcasing expertise in rapid application development and logistics optimization. <br />
-            • Leveraged Deluge scripting within Zoho Creator to implement custom validations, workflows, and automations tailored to the specific requirements of the system. <br />
-            • MMS was further developed using React and employed React Router, Axios, and Bootstrap for seamless user experience. React Hook Form ensured efficient form handling, and Vite streamlined development. Used Git for facilitating version control for project management. <br />
-            • Successfully deployed and managed the MMS on AWS EC2 instances, optimizing cost-efficiency and ensuring high availability for seamless operations in a cloud environment. <br />
-            • The MMS effectively reduced transportation delays and costs, enhancing logistics efficiency. Its potential for wider industry adoption promises increased revenue, bolstering the company’s market presence and overall profitability.
+            &bull; Utilized advanced low-code development skills in Zoho Creator to architect, develop, and deploy a &quot;Mining Management System&quot; (MMS) with QR-code-based route tracking, showcasing expertise in rapid application development and logistics optimization. <br />
+            &bull; Leveraged Deluge scripting within Zoho Creator to implement custom validations, workflows, and automations tailored to the specific requirements of the system. <br />
+            &bull; MMS was further developed using React and employed React Router, Axios, and Bootstrap for seamless user experience. React Hook Form ensured efficient form handling, and Vite streamlined development. Used Git for facilitating version control for project management. <br />
+            &bull; Successfully deployed and managed the MMS on AWS EC2 instances, optimizing cost-efficiency and ensuring high availability for seamless operations in a cloud environment. <br />
+            &bull; The MMS effectively reduced transportation delays and costs, enhancing logistics efficiency. Its potential for wider industry adoption promises increased revenue, bolstering the company&rsquo;s market presence and overall profitability.
           </p>
         </div>
         <div className="p-6 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
@@ -59,9 +58,9 @@ const WorkExperience = () => {
           <p className="text-blue-400 mb-1">Flutura Business Solutions</p>
           <p className="text-sm text-gray-400">Jun 2022 - Aug 2022</p>
           <p className="mt-4 text-gray-300">
-            • Specialized in Engineering Workbench (EWB) Data Analytics at Flutura Business Solutions, conducting drone flight data analysis using EWB and Cerebra Solutions, extracting meaningful insights. <br />
-            • Analyzed sensor data for drone failure cases using clustering, enhancing expertise in data analytics and digital twin concepts. <br />
-            • Researched AR/VR tools, selected Vuforia, and integrated it with Unity to create a Drone AR environment. Simulated swarm scenarios with radar-zone detection and on-click individual drone analysis, showcasing practical skills.
+            &bull; Specialized in Engineering Workbench (EWB) Data Analytics at Flutura Business Solutions, conducting drone flight data analysis using EWB and Cerebra Solutions, extracting meaningful insights. <br />
+            &bull; Analyzed sensor data for drone failure cases using clustering, enhancing expertise in data analytics and digital twin concepts. <br />
+            &bull; Researched AR/VR tools, selected Vuforia, and integrated it with Unity to create a Drone AR environment. Simulated swarm scenarios with radar-zone detection and on-click individual drone analysis, showcasing practical skills.
           </p>
         </div>
       </div>
