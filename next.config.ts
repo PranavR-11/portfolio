@@ -1,11 +1,12 @@
-import { NextConfig } from 'next'
+import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/portfolio',
   images: {
     unoptimized: true,
   },
-}
+  basePath: '/portfolio', // Replace 'portfolio' with your repository name
+  assetPrefix: '/portfolio', // Replace 'portfolio' with your repository name
+};
 
 export default nextConfig

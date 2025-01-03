@@ -1,5 +1,5 @@
 "use client";
-import { Link as ScrollLink, animateScroll } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
