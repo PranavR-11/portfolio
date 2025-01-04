@@ -16,7 +16,7 @@ const ArtGallery = () => {
           }}
         >
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/art/black-panther.jpg`}
+            src="/portfolio/art/bp.jpeg"
             alt="Black Panther Art"
             className="w-full max-w-xs h-auto object-contain rounded-lg shadow-lg"
           />
