@@ -6,7 +6,7 @@
 
 /* Root Variables */
 :root {
-  --background: transparent; /* Transparent background */
+  /* --background: transparent;  */
   --foreground: black;       /* Black text */
 }
 
@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: transparent; /* Ensure transparency */
+  background-color: black; /* Ensure transparency */
   color: black;
 }
 
