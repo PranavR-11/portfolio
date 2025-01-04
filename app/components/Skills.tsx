@@ -108,7 +108,7 @@ const skills = [
 export default function Skills() {
   return (
     <section className="py-16 px-6 bg-gray-900 text-white" id="skills">
-      <h2 className="text-4xl font-extrabold text-center mb-8">My Skills</h2>
+      <h2 className="text-5xl font-extrabold text-center mb-8">My Skills</h2>
       <div className="grid grid-cols-2 md:grid-cols-7 gap-8">
         {skills.map((skill, index) => (
           <div

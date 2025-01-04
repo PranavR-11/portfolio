@@ -18,7 +18,7 @@ const Publications = () => {
   
     return (
       <section id="publications" className="py-20 bg-gray-900 text-white">
-        <h2 className="text-4xl font-bold text-center mb-10">Publications</h2>
+        <h2 className="text-5xl font-bold text-center mb-10">Publications</h2>
         <div className="container mx-auto space-y-6">
           {publications.map((publication, index) => (
             <div
