@@ -23,20 +23,20 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-transparent text-blue text-center px-6">
-      <h1 className="text-6xl md:text-7xl font-extrabold mb-4">
+    <section className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-center px-4">
+      <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-4 leading-tight">
         {name}
         <span className="text-blue-400 blinking">|</span>
       </h1>
-      <h2 className="text-2xl font-bold">Aspiring Analyst | Machine Learning & Data Science Enthusiast</h2>
-      <p className="text-lg text-blue-400 mb-8 max-w-3xl">
+      <h2 className="text-base sm:text-lg md:text-xl font-semibold">Aspiring Analyst | Machine Learning & Data Science Enthusiast</h2>
+      <p className="text-sm sm:text-base md:text-lg text-blue-400 mb-6 max-w-2xl">
         A passionate coder and creator, leveraging data to solve real-world
         problems through Machine Learning, Data Science, and Analytics.
       </p>
       <div className="flex flex-col md:flex-row items-center gap-4 mb-8">
         <a
           href="/cv.pdf"
-          className="px-6 py-3 bg-blue-400 rounded-lg text-lg font-semibold text-white hover:bg-blue-500 transition duration-300"
+          className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-400 rounded text-sm sm:text-base text-white hover:bg-blue-500 transition duration-300"
           target="_blank"
           rel="noopener noreferrer"
           download
