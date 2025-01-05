@@ -46,7 +46,7 @@ export default function Navbar() {
         </h1> */}
 
         {/* Right: Navigation Links */}
-        <ul className="flex flex-wrap justify-center items-center text-white space-x-2 sm:space-x-6 px-4">
+        <ul className="flex flex-wrap justify-center md:justify-evenly items-center text-white space-x-3 md:space-x-6 px-4">
           {[
             { name: "HOME", id: "hero" },
             { name: "ABOUT", id: "about" },
@@ -58,16 +58,16 @@ export default function Navbar() {
             { name: "CERTIFICATIONS", id: "certifications" },
             { name: "ART GALLERY", id: "artgallery" },
           ].map((link) => (
-            <li key={link.id}>
+            <li key={link.id} className="whitespace-nowrap">
               <ScrollLink
                 to={link.id}
                 smooth={true}
                 duration={500}
                 spy={true}
-                className={`cursor-pointer font-semibold text-sm sm:text-base ${
+                className={`cursor-pointer font-semibold text-sm md:text-base ${
                   activeSection === link.id
                     ? "text-blue-400"
-                    : "hover:text-blue-400"
+                    : "hover:text-blue-400 hover:bg-white"
                 } transition-colors duration-300`}
               >
                 {link.name}
