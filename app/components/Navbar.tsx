@@ -62,7 +62,7 @@ export default function Navbar() {
 
         {/* Hamburger Menu Button (Mobile) */}
         <button
-          className="lg:hidden text-blue-400 hover:text-blue-500 focus:outline-none mr-4"
+          className="lg:hidden text-blue-400 hover:text-blue-500 focus:outline-none mr-8"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
