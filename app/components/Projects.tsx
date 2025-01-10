@@ -51,6 +51,16 @@ const projects = [
     tech: ["Matlab"],
     github: "https://github.com/PranavR-11/Noise-Removal-using-different-filters/tree/main",
   },
+  {
+    title: "Blue Bikes",
+    description: `
+      Designed an interactive Tableau dashboard. 
+      - Analyzed seasonal trends, trip durations, and station popularity for Blue Bikes, enabling data-driven recommendations for inventory management and marketing strategies.
+      - Uncovered key insights on user behavior, including peak ridership months, geographic hotspots, and trip duration patterns, leveraging geospatial analysis and visualization to support operational optimization.
+      `,
+    tech: ["Tableau"],
+    github: "https://github.com/PranavR-11/Blue-Bikes-Analysis",
+  },
 ];
 
 export default function Projects() {
