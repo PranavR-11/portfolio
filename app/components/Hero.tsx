@@ -35,7 +35,7 @@ export default function Hero() {
       </p>
       <div className="flex flex-col md:flex-row items-center gap-4 mb-8">
         <a
-          href="/cv.pdf"
+          href="/portfolio/cv.pdf"
           className="px-4 py-2 sm:px-6 sm:py-3 bg-blue-400 rounded text-sm sm:text-base text-white hover:bg-blue-500 transition duration-300"
           target="_blank"
           rel="noopener noreferrer"
