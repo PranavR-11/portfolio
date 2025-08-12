@@ -5,16 +5,29 @@ const WorkExperience = () => {
     <section id="work" className="py-20 bg-gray-900 text-white">
       <h2 className="text-5xl font-bold text-center mb-10">Work Experience</h2>
       <div className="grid grid-cols-1 gap-8 px-4 max-w-3xl mx-auto">
+      <div className="p-6 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          <h3 className="text-2xl font-semibold mb-2">Data Analyst Consultant</h3>
+          <p className="text-blue-400 mb-1">Forfend Cybernatics</p>
+          <p className="text-sm text-gray-400">Sep 2022 - Jul 2025</p>
+          <p className="mt-4 text-gray-300">
+            &bull; Designed and deployed an AI-driven Vehicle Recommendation Platform for automobile showroom kiosks and sales teams,
+            integrating customer inputs with sales, product, and demand data; boosted engagement 60% and conversions 22%.<br />
+            &bull; Partnered with sales leadership to turn analytics into optimized promotional campaigns, improving ROI 15%<br />
+            &bull; Built loyalty and expenditure analytics to segment high-value customers, driving targeted discounts that lifted repeat purchases
+            18% and average transaction value 12%<br />
+            &bull; Developed and maintained a Tableau dashboard tracking campaign progress, success rates, and engagement metrics, enabling
+            rapid, data-driven adjustments.
+          </p>
+        </div>
         <div className="p-6 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
           <h3 className="text-2xl font-semibold mb-2">Full Stack Intern</h3>
           <p className="text-blue-400 mb-1">Rezolve AI</p>
           <p className="text-sm text-gray-400">Jan 24 - Feb 24</p>
           <p className="mt-4 text-gray-300">
-            &bull; Implemented branch-per-ticket strategy for efficient code
-            management based on a React application. <br />
-            &bull; Executed multiple UI changes with a focus on Tailwind CSS. <br />
-            &bull; Merged branches, pushed changes to Atlassian Bitbucket, and
-            initiated Pull Requests for streamlined collaboration.
+            &bull; Led a team to design and deploy real-time dashboards accessing Azure-hosted financial data forWipro’s BFS delivery vertical,
+            enabling leadership to monitor key metrics for a 230,000+ employee global workforce. <br />
+            &bull; Implemented role-based access controls to ensure secure, compliant data visibility across user groups. <br />
+            &bull; Streamlined data ingestion workflows, reducing manual reporting time 40% and accelerating decision-making speed 30%.
           </p>
         </div>
         <div className="p-6 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
@@ -41,18 +54,7 @@ const WorkExperience = () => {
             robust financial tracking in the portal.
           </p>
         </div>
-        <div className="p-6 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-          <h3 className="text-2xl font-semibold mb-2">App Developer Intern</h3>
-          <p className="text-blue-400 mb-1">Forfend Cybernatics</p>
-          <p className="text-sm text-gray-400">Jun 2023 - Jul 2023</p>
-          <p className="mt-4 text-gray-300">
-            &bull; Utilized advanced low-code development skills in Zoho Creator to architect, develop, and deploy a &quot;Mining Management System&quot; (MMS) with QR-code-based route tracking, showcasing expertise in rapid application development and logistics optimization. <br />
-            &bull; Leveraged Deluge scripting within Zoho Creator to implement custom validations, workflows, and automations tailored to the specific requirements of the system. <br />
-            &bull; MMS was further developed using React and employed React Router, Axios, and Bootstrap for seamless user experience. React Hook Form ensured efficient form handling, and Vite streamlined development. Used Git for facilitating version control for project management. <br />
-            &bull; Successfully deployed and managed the MMS on AWS EC2 instances, optimizing cost-efficiency and ensuring high availability for seamless operations in a cloud environment. <br />
-            &bull; The MMS effectively reduced transportation delays and costs, enhancing logistics efficiency. Its potential for wider industry adoption promises increased revenue, bolstering the company&rsquo;s market presence and overall profitability.
-          </p>
-        </div>
+
         <div className="p-6 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
           <h3 className="text-2xl font-semibold mb-2">Data Science Intern</h3>
           <p className="text-blue-400 mb-1">Flutura Business Solutions</p>
