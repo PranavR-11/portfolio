@@ -1,32 +1,51 @@
+"use client";
+
 const education = [
   {
     year: "2024 - 2025",
-    title: "Babson College",
-    platform: "Business Analytics",
+    institution: "Babson College",
+    degree: "Master of Science in Business Analytics",
+    location: "Wellesley, MA",
   },
   {
     year: "2020 - 2024",
-    title: "PES University",
-    platform: "Computer Science",
+    institution: "PES University",
+    degree: "Bachelor of Science in Computer Science",
+    location: "Bangalore, India",
   },
 ];
 
 export default function Education() {
   return (
-    <section id="education" className="py-16 px-6 bg-gray-900 text-gray-300">
+    <section id="education" className="relative py-20 px-6 cyber-grid-bg">
       <div className="container mx-auto">
-        <h2 className="text-5xl font-extrabold text-white text-center mb-8">
-          My Education
-        </h2>
-        <div className="flex flex-col gap-8 items-center">
+        <div className="text-center mb-16">
+          <span className="text-cyber-primary font-mono text-sm tracking-wider">
+            {`// ACADEMIC BACKGROUND`}
+          </span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4">
+            <span className="text-white">Education</span>
+          </h2>
+        </div>
+
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {education.map((edu, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full max-w-3xl"
+              className="glass-card p-8 hover:neon-border transition-all duration-300 group animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-xl font-bold text-white mb-1">{edu.title}</h3>
-              <p className="text-blue-400 text-sm mb-2">{edu.year}</p>
-              <p className="text-gray-400">{edu.platform}</p>
+              <div className="mb-4">
+                <i className="fas fa-graduation-cap text-4xl text-cyber-primary group-hover:scale-110 transition-transform"></i>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyber-primary transition-colors">
+                {edu.institution}
+              </h3>
+              <p className="text-gray-300 mb-3">{edu.degree}</p>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-500 font-mono">{edu.year}</span>
+                <span className="text-gray-500">{edu.location}</span>
+              </div>
             </div>
           ))}
         </div>

@@ -1,99 +1,178 @@
+"use client";
+
 const projects = [
   {
-    title: "Capstone Project | CharGen",
-    description: `
-      CharGen, short for Character Generation, involved creating a 3D character from textual descriptions. 
-      - Contributed to the creation of dual stable diffusion pipelines that generate 2D images corresponding to textual attributes for faces and bodies.
-      - Worked on the DECA model, which processed facial images for detailed mesh and texture, ensuring realistic and diverse character synthesis.
-      - Deployed the 3D character generation app using the FReMP framework.
-      - Published a paper titled “Synthesizing 3D Faces and Bodies from Text: A Stable Diffusion-based Fusion of DECA and PIFuHD”.
-    `,
-    tech: ["Python", "FReMP"],
+    title: "CharGen | 3D Character Generation",
+    description:
+      "AI-powered 3D character synthesis from text descriptions using dual stable diffusion pipelines, DECA model for facial processing, and FReMP framework deployment. Published research paper on text-to-3D synthesis techniques.",
+    highlights: [
+      "Dual stable diffusion pipelines for face and body generation",
+      "DECA model integration for realistic mesh and texture",
+      "Published academic paper on synthesis methodology",
+    ],
+    tech: ["Python", "AI/ML", "FReMP", "DECA"],
     github: "https://github.com/YourRepo/CharGen",
+    category: "AI/ML",
   },
   {
-    title: "IPL.com",
-    description: `
-      A webpage for the Indian Premier League (IPL) Cricket tournament. 
-      - Developed a multi-page website that included statistics, FAQs, ticket booking, and personalized team selection.
-      - Focused on creating an engaging user experience for cricket enthusiasts.
-    `,
-    tech: ["React", "JavaScript"],
+    title: "IPL.com | Cricket Platform",
+    description:
+      "Multi-page web application for Indian Premier League with comprehensive statistics, FAQ system, ticket booking functionality, and personalized team selection features.",
+    highlights: [
+      "Interactive statistics dashboard",
+      "Ticket booking system integration",
+      "Personalized team selection algorithm",
+    ],
+    tech: ["React", "JavaScript", "UI/UX"],
     github: "https://github.com/PranavR-11/IPL.com",
+    category: "Web Dev",
   },
   {
-    title: "Optimal IPL 11 Team Selection",
-    description: `
-      Built a predictive model for selecting the best playing 11 from an auction pool for an IPL team. 
-      - Utilized supervised learning techniques to analyze player statistics, match performance, and other features.
-      - Designed a model that leverages data-driven decisions for optimal team selection.
-    `,
-    tech: ["Python"],
+    title: "Optimal IPL Team Selection",
+    description:
+      "Predictive ML model for optimal playing 11 selection using supervised learning techniques, analyzing player statistics, match performance, and historical data for data-driven team composition.",
+    highlights: [
+      "Supervised learning model implementation",
+      "Player performance analysis engine",
+      "Data-driven team optimization",
+    ],
+    tech: ["Python", "ML", "Data Analysis"],
     github: "https://github.com/PranavR-11/Optimal-IPL-team_Data_Analysis/tree/master",
+    category: "Data Science",
   },
   {
-    title: "Hadoop-MapReduce",
-    description: `
-      Implemented the core components of Hadoop's MapReduce Framework. 
-      - Created a multi-node configuration for parallel execution of map and reduce jobs.
-      - Used Python and socket programming for handling multi-node communication efficiently.
-    `,
-    tech: ["Python", "Socket Programming"],
+    title: "Hadoop MapReduce Implementation",
+    description:
+      "Custom implementation of Hadoop's MapReduce framework with multi-node configuration for parallel job execution using Python and socket programming.",
+    highlights: [
+      "Multi-node parallel processing",
+      "Custom MapReduce implementation",
+      "Efficient socket-based communication",
+    ],
+    tech: ["Python", "Distributed Systems", "Socket Programming"],
     github: "https://github.com/PranavR-11/Hadoop-MapReduce",
+    category: "Systems",
   },
   {
-    title: "Noise Removal Using Different Filters",
-    description: `
-      Explored digital image processing using various noise filters in Matlab. 
-      - Demonstrated the application of noise reduction techniques such as salt and pepper, average, median, and Gaussian filters.
-      - Allowed users to observe filter behavior with adjustable noise levels, enhancing understanding of image processing.
-    `,
-    tech: ["Matlab"],
+    title: "Image Noise Removal Filters",
+    description:
+      "Digital image processing application implementing various noise reduction filters with adjustable parameters for exploring filter behavior and performance.",
+    highlights: [
+      "Multiple filter implementations (median, Gaussian, etc.)",
+      "Interactive noise level adjustment",
+      "Real-time filter comparison",
+    ],
+    tech: ["Matlab", "Image Processing"],
     github: "https://github.com/PranavR-11/Noise-Removal-using-different-filters/tree/main",
+    category: "Computer Vision",
   },
   {
-    title: "Blue Bikes",
-    description: `
-      Designed an interactive Tableau dashboard. 
-      - Analyzed seasonal trends, trip durations, and station popularity for Blue Bikes, enabling data-driven recommendations for inventory management and marketing strategies.
-      - Uncovered key insights on user behavior, including peak ridership months, geographic hotspots, and trip duration patterns, leveraging geospatial analysis and visualization to support operational optimization.
-      `,
-    tech: ["Tableau"],
+    title: "Blue Bikes Analytics Dashboard",
+    description:
+      "Interactive Tableau dashboard analyzing bike-sharing patterns, seasonal trends, and station popularity with geospatial visualizations for operational optimization.",
+    highlights: [
+      "Seasonal trend analysis",
+      "Geospatial hotspot mapping",
+      "Trip duration pattern insights",
+    ],
+    tech: ["Tableau", "Data Visualization", "Analytics"],
     github: "https://github.com/PranavR-11/Blue-Bikes-Analysis",
+    category: "Analytics",
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 px-6 bg-gray-800 text-blue-300">
+    <section id="projects" className="relative py-20 px-6 cyber-grid-bg">
       <div className="container mx-auto">
-        <h2 className="text-5xl font-extrabold text-white text-center mb-8">
-          My Projects
-        </h2>
-        <div className="space-y-8">
+        <div className="text-center mb-16">
+          <span className="text-cyber-primary font-mono text-sm tracking-wider">
+            {`// PORTFOLIO`}
+          </span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4">
+            <span className="text-white">Featured</span>{" "}
+            <span className="bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Innovative solutions combining data science, machine learning, and full-stack development
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              className="group glass-card p-6 hover:neon-border transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-2xl font-bold text-white mb-4">
-                {project.title}
-              </h3>
-              <p className="text-gray-400 whitespace-pre-line mb-4">{project.description}</p>
-              <div className="flex items-center gap-4">
-                <p className="text-blue-400 font-semibold">{project.tech.join(", ")}</p>
+              {/* Category badge */}
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xs font-mono px-3 py-1 bg-cyber-primary/10 text-cyber-primary rounded-full border border-cyber-primary/30">
+                  {project.category}
+                </span>
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`GitHub repository for ${project.title}`}
-                  className="text-blue-400 hover:text-white transition-colors duration-300"
+                  className="text-cyber-primary hover:text-cyber-secondary transition-colors duration-300 transform hover:scale-110"
                 >
                   <i className="fab fa-github text-2xl"></i>
                 </a>
               </div>
+
+              {/* Project title */}
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-cyber-primary transition-colors">
+                {project.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Highlights */}
+              <ul className="space-y-2 mb-4">
+                {project.highlights.map((highlight, hIndex) => (
+                  <li key={hIndex} className="text-xs text-gray-500 flex items-start">
+                    <span className="text-cyber-secondary mr-2 mt-0.5">&gt;</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tech stack */}
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-cyber-primary/20">
+                {project.tech.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="text-xs font-mono px-2 py-1 bg-cyber-accent/10 text-cyber-accent rounded border border-cyber-accent/30"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Hover effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyber-primary/0 to-cyber-secondary/0 group-hover:from-cyber-primary/5 group-hover:to-cyber-secondary/5 rounded-lg transition-all duration-300 pointer-events-none"></div>
             </div>
           ))}
+        </div>
+
+        {/* View more section */}
+        <div className="mt-12 text-center">
+          <a
+            href="https://github.com/PranavR-11"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-transparent neon-border rounded-lg text-cyber-primary font-mono font-semibold hover:bg-cyber-primary/10 transition-all duration-300"
+          >
+            <i className="fab fa-github"></i>
+            <span>VIEW_ALL_PROJECTS</span>
+            <span className="text-cyber-secondary">→</span>
+          </a>
         </div>
       </div>
     </section>
