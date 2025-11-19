@@ -55,21 +55,22 @@ export default function Navbar() {
     <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
       scrolled ? 'glass-card shadow-lg shadow-cyber-primary/10' : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo/Brand */}
-        <div
-          className="cursor-pointer group"
-          onClick={() => animateScroll.scrollToTop()}
-        >
-          <h1 className="text-xl sm:text-2xl font-bold font-mono">
-            <span className="text-cyber-primary group-hover:text-glow transition-all">&lt;</span>
-            <span className="text-white group-hover:text-cyber-primary transition-colors">PR</span>
-            <span className="text-cyber-primary group-hover:text-glow transition-all">/&gt;</span>
-          </h1>
-        </div>
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo/Brand */}
+          <div
+            className="cursor-pointer group"
+            onClick={() => animateScroll.scrollToTop()}
+          >
+            <h1 className="text-xl sm:text-2xl font-bold font-mono">
+              <span className="text-cyber-primary group-hover:text-glow transition-all">&lt;</span>
+              <span className="text-white group-hover:text-cyber-primary transition-colors">PR</span>
+              <span className="text-cyber-primary group-hover:text-glow transition-all">/&gt;</span>
+            </h1>
+          </div>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center gap-1">
+          {/* Desktop Navigation */}
+          <ul className="hidden lg:flex items-center justify-center gap-1 flex-1">
           {navLinks.map((link) => (
             <li key={link.id}>
               <ScrollLink
@@ -89,14 +90,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden text-cyber-primary hover:text-cyber-secondary focus:outline-none transition-colors p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden text-cyber-primary hover:text-cyber-secondary focus:outline-none transition-colors p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}

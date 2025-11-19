@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
 
         <h1 className={`text-5xl sm:text-6xl md:text-8xl font-extrabold mb-6 leading-tight ${isGlitching ? 'animate-glitch' : ''}`}>
-          <span className="bg-gradient-to-r from-cyber-primary via-cyber-secondary to-cyber-accent bg-clip-text text-transparent text-glow">
+          <span className="bg-gradient-to-r from-cyber-primary via-cyber-secondary to-cyber-accent bg-clip-text text-transparent">
             {name}
           </span>
           <span className="text-cyber-primary blinking">_</span>

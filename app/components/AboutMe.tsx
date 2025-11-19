@@ -54,7 +54,7 @@ export default function AboutMe() {
   return (
     <section id="about" className="relative py-20 px-6 cyber-grid-bg">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
           <span className="text-cyber-primary font-mono text-sm tracking-wider">
             {`// INTRODUCTION`}
           </span>

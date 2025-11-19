@@ -2,6 +2,7 @@
 
 import React from "react";
 import "./globals.css";
+import VantaBackground from "./components/VantaBackground";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,6 +22,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body className="relative">
+        {/* Vanta.js Background */}
+        <VantaBackground />
         {/* Main content */}
         <div className="main-content relative">{children}</div>
       </body>

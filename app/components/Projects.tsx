@@ -85,17 +85,17 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-20 px-6 cyber-grid-bg">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
           <span className="text-cyber-primary font-mono text-sm tracking-wider">
             {`// PORTFOLIO`}
           </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 text-center w-full">
             <span className="text-white">Featured</span>{" "}
             <span className="bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl text-center">
             Innovative solutions combining data science, machine learning, and full-stack development
           </p>
         </div>
