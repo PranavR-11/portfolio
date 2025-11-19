@@ -3,12 +3,10 @@
 import { useState, useEffect } from "react";
 
 export default function Hero() {
-  const [name, setName] = useState("");
+  const name = "Pranav Rebala";
   const [isGlitching, setIsGlitching] = useState(false);
 
   useEffect(() => {
-    typeText("Pranav Rebala");
-
     // Random glitch effect
     const glitchInterval = setInterval(() => {
       setIsGlitching(true);
@@ -17,19 +15,6 @@ export default function Hero() {
 
     return () => clearInterval(glitchInterval);
   }, []);
-
-  const typeText = (textToType: string) => {
-    let index = 0;
-    setName("");
-    const interval = setInterval(() => {
-      if (index < textToType.length) {
-        setName((prevText) => prevText + textToType.charAt(index));
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 150);
-  };
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 cyber-grid-bg overflow-hidden">
