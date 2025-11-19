@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST='{"app/components/VantaBackground.tsx -> three":{"id":7274,"files":["static/chunks/b536a0f1.01f0ccc6b771ebf3.js","static/chunks/bd904a5c.67dee5355813ea9f.js"]},"app/components/VantaBackground.tsx -> vanta/dist/vanta.net.min.js":{"id":2567,"files":["static/chunks/567.6943b85c93f65af8.js"]}}';
