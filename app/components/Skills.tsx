@@ -39,7 +39,7 @@ export default function Skills() {
   return (
     <section className="relative py-20 px-6 cyber-grid-bg" id="skills">
       <div className="container mx-auto">
-        <div className="text-center mb-16 flex flex-col items-center">
+        <div className="text-center mb-16 flex flex-col items-center w-full">
           <span className="text-cyber-primary font-mono text-sm tracking-wider">
             {`// TECHNICAL PROFICIENCY`}
           </span>

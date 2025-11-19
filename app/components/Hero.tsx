@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
 
         <h1 className={`text-5xl sm:text-6xl md:text-8xl font-extrabold mb-6 leading-tight ${isGlitching ? 'animate-glitch' : ''}`}>
-          <span className="bg-gradient-to-r from-cyber-primary via-cyber-secondary to-cyber-accent bg-clip-text text-transparent">
+          <span className="text-white drop-shadow-[0_0_20px_rgba(0,240,255,0.8)] drop-shadow-[0_0_40px_rgba(0,240,255,0.5)]">
             {name}
           </span>
           <span className="text-cyber-primary blinking">_</span>
@@ -91,7 +91,7 @@ export default function Hero() {
         </div>
 
         {/* Social Links */}
-        <div className="flex gap-6 justify-center">
+        <div className="flex gap-6 justify-center mb-16">
           <a
             href="https://github.com/PranavR-11"
             target="_blank"
@@ -121,13 +121,11 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-cyber-primary/50 text-xs font-mono">SCROLL</span>
-            <div className="w-6 h-10 border-2 border-cyber-primary/30 rounded-full p-1">
-              <div className="w-1 h-2 bg-cyber-primary rounded-full mx-auto animate-pulse"></div>
-            </div>
+        {/* Scroll indicator - placed below social links */}
+        <div className="flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-cyber-primary/50 text-xs font-mono">SCROLL</span>
+          <div className="w-6 h-10 border-2 border-cyber-primary/30 rounded-full p-1">
+            <div className="w-1 h-2 bg-cyber-primary rounded-full mx-auto animate-pulse"></div>
           </div>
         </div>
       </div>
