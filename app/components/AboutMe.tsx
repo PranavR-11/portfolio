@@ -73,9 +73,9 @@ export default function AboutMe() {
             <div className="relative z-10">
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 With a strong foundation in computer science from{" "}
-                <span className="font-bold text-cyber-primary">PES University</span>, I've
+                <span className="font-bold text-cyber-primary">PES University</span>, I&apos;ve
                 honed my expertise in Python, full-stack development, and data-driven
-                decision-making. Currently pursuing a Master's in Business Analytics
+                decision-making. Currently pursuing a Master&apos;s in Business Analytics
                 at{" "}
                 <span className="font-bold text-cyber-primary">Babson College</span>, I
                 bring a unique blend of{" "}

@@ -5,18 +5,16 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-cyber-primary/20;
-  }
-
   body {
-    @apply bg-cyber-darker text-gray-100;
+    background-color: #050508;
+    color: #f3f4f6;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     overflow-x: hidden;
   }
 
   ::selection {
-    @apply bg-cyber-primary/30 text-white;
+    background-color: rgba(0, 240, 255, 0.3);
+    color: white;
   }
 }
 
