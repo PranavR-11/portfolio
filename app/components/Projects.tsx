@@ -1,5 +1,33 @@
 "use client";
 
+const latestProject = {
+  title: "Football Analytics AI",
+  nameplate: "FootballBase",
+  summary:
+    "A real-time, multilingual RAG + LLM analytics assistant that converts raw sports datasets into conversational insights, charts, and exportable assets.",
+  why: "I wanted a single workflow that fuses data engineering, machine learning, and visual analytics so an analyst can ask a plain-language question and receive a data-backed answer, a chart, and an exportable slide in seconds.",
+  how: [
+    "Frontend: Next.js + React with a streaming UI that renders Chart.js visuals while receiving WebSocket updates from the backend.",
+    "Backend: FastAPI streams JSON and matplotlib charts; LangChain orchestrates tool calls, and OpenAI models perform intent classification plus slot filling.",
+    "Retrieval & Intelligence: FAISS with Sentence Transformer embeddings plus fuzzy matching for entity resolution; MCP coordinates tool invocations and data retrieval.",
+    "Data Ops: Pandas wrangles source data while a lightweight SQLite cache accelerates repeat questions. Everything is containerized with Docker and secured with Caddy for TLS/WebSocket passthrough.",
+  ],
+  delivers:
+    "Delivers concise, cited answers with inline sources, on-demand charts, PNG export, and automatic language detection across the top ten languages.",
+  value: [
+    "Research & finance teams get instant cited charts for investor decks.",
+    "Support teams generate knowledge-base assisted replies with confidence scores.",
+    "Retail/CPG teams receive promo lift estimates and SKU recommendations.",
+    "IoT/manufacturing teams gain anomaly explanations with prioritized inspection checklists.",
+    "Regulated industries turn policy documents into actionable product tasks and compliance steps.",
+  ],
+  video: "/LinkedinClip.mp4",
+  demoUrl: "https://footballbase.netlify.app",
+  videoCaption: "Short walkthrough demo",
+  connectionNote:
+    "If you work where ML, data engineering, and product intersect—or have thoughts about vertical use cases—I’d love your feedback and to connect.",
+};
+
 const projects = [
   {
     title: "CharGen | 3D Character Generation",
@@ -97,6 +125,95 @@ export default function Projects() {
           <p className="text-gray-400 max-w-2xl text-center">
             Innovative solutions combining data science, machine learning, and full-stack development
           </p>
+        </div>
+
+        <div className="mb-12">
+          <div className="uppercase tracking-[0.3em] text-xs text-gray-400 text-center mb-4 font-mono">
+            // LATEST PROJECT
+          </div>
+          <div className="bg-stone-100 text-stone-900 border-4 border-stone-900 rounded-xl shadow-[0_25px_80px_rgba(0,0,0,0.35)] p-8 md:p-10 font-serif relative overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-6 bg-stone-900/5 pointer-events-none"></div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start relative z-10">
+              <div className="space-y-6">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.4em] text-stone-500">Late Edition</p>
+                  <h3 className="text-3xl md:text-4xl font-black mt-2 leading-tight">
+                    {latestProject.title}
+                    <span className="block text-sm font-semibold tracking-[0.3em] text-stone-600 mt-2">
+                      {latestProject.nameplate}
+                    </span>
+                  </h3>
+                  <p className="text-lg mt-4 leading-relaxed">{latestProject.summary}</p>
+                </div>
+
+                <div className="space-y-4 text-base leading-relaxed">
+                  <div>
+                    <h4 className="text-xl font-bold uppercase tracking-[0.2em] text-stone-700">Why I built it</h4>
+                    <p>{latestProject.why}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold uppercase tracking-[0.2em] text-stone-700">How it works</h4>
+                    <ul className="list-disc list-inside space-y-2">
+                      {latestProject.how.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold uppercase tracking-[0.2em] text-stone-700">What it delivers</h4>
+                    <p>{latestProject.delivers}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold uppercase tracking-[0.2em] text-stone-700">Real-world value</h4>
+                    <ul className="list-disc list-inside space-y-2">
+                      {latestProject.value.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href={latestProject.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-stone-900 rounded-md font-mono text-sm tracking-[0.2em] hover:bg-stone-900 hover:text-stone-100 transition-colors"
+                  >
+                    VISIT SITE
+                    <span className="text-cyber-secondary">↗</span>
+                  </a>
+                  <a
+                    href={latestProject.video}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-dashed border-stone-500 rounded-md font-mono text-sm tracking-[0.2em] hover:bg-stone-200 transition-colors"
+                  >
+                    WATCH DEMO
+                    <span className="text-cyber-primary">▶</span>
+                  </a>
+                </div>
+                <p className="text-sm uppercase tracking-[0.3em] text-stone-500">
+                  {latestProject.connectionNote}
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="aspect-video bg-black rounded-lg overflow-hidden border-4 border-stone-900 shadow-inner">
+                  <video
+                    src={latestProject.video}
+                    controls
+                    className="w-full h-full object-cover"
+                    poster="/art/bp.jpeg"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <p className="text-center text-xs uppercase tracking-[0.3em] text-stone-500">
+                  {latestProject.videoCaption}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

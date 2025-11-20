@@ -61,7 +61,7 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a
-            href="/portfolio/cv.pdf"
+            href="/Pranav_Resume.pdf"
             className="group relative px-8 py-3 bg-transparent neon-border rounded-lg text-cyber-primary font-mono font-semibold hover:bg-cyber-primary/10 transition-all duration-300 overflow-hidden"
             target="_blank"
             rel="noopener noreferrer"
