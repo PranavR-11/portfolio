@@ -16,7 +16,7 @@ export default function AboutMe() {
             href="mailto:prebala1@babson.edu"
             className="text-cyber-primary hover:text-cyber-secondary transition-colors block"
           >
-            prebala1@babson.edu
+            navrebala@gmail.com
           </a>
           <a
             href="mailto:pranav.rebala11@gmail.com"
