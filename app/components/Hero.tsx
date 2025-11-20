@@ -17,7 +17,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 cyber-grid-bg overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 cyber-grid-bg overflow-hidden"
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-cyber-primary/10 rounded-full blur-3xl animate-float"></div>

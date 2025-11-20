@@ -78,6 +78,7 @@ export default function Navbar() {
                 smooth={true}
                 duration={500}
                 spy={true}
+                offset={-80}
                 className={`cursor-pointer font-mono text-sm px-4 py-2 rounded-md transition-all duration-300 ${
                   activeSection === link.id
                     ? "text-cyber-primary bg-cyber-primary/10 neon-border"
@@ -116,6 +117,7 @@ export default function Navbar() {
                   smooth={true}
                   duration={500}
                   spy={true}
+                  offset={-80}
                   onClick={() => setIsMenuOpen(false)}
                   className={`block cursor-pointer font-mono text-sm px-4 py-3 rounded-md transition-all duration-300 ${
                     activeSection === link.id
