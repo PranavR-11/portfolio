@@ -23,7 +23,7 @@ export default function Education() {
           <span className="text-cyber-primary font-mono text-sm tracking-wider">
             {`// ACADEMIC BACKGROUND`}
           </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 text-center w-full">
             <span className="text-white">Education</span>
           </h2>
         </div>

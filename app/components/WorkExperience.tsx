@@ -58,7 +58,7 @@ const WorkExperience = () => {
           <span className="text-cyber-primary font-mono text-sm tracking-wider">
             {`// PROFESSIONAL JOURNEY`}
           </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 text-center w-full">
             <span className="text-white">Work</span>{" "}
             <span className="bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
               Experience
