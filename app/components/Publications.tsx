@@ -24,7 +24,7 @@ const Publications = () => {
           <span className="text-cyber-primary font-mono text-sm tracking-wider">
             {`// RESEARCH & PUBLICATIONS`}
           </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 text-center w-full">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 w-full flex justify-center">
             <span className="text-white">Publications</span>
           </h2>
         </div>

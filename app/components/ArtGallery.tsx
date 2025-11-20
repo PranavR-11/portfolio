@@ -25,7 +25,7 @@ const ArtGallery = () => {
           <span className="text-cyber-primary font-mono text-sm tracking-wider">
             {`// CREATIVE WORK`}
           </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 text-center w-full">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 w-full flex justify-center">
             <span className="text-white">Art</span>{" "}
             <span className="bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
               Gallery
