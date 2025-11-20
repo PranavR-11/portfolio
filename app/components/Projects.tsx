@@ -30,6 +30,32 @@ const latestProject = {
 
 const projects = [
   {
+    title: "LightweightMMM Attribution Pipeline",
+    description:
+      "Built a LightweightMMM pipeline leveraging Meta's Robyn dataset plus Google Ads and Analytics exports to estimate channel elasticities, adstock lags, and seasonality and produce posterior predictive estimates and marginal ROI curves.",
+    highlights: [
+      "Meta's Robyn dataset integration with Google Ads and Analytics",
+      "Exported parameterized scenario grids and hero mixes for interactive Tableau decisioning",
+      "Delivered pilot reallocation with estimated 9% incremental revenue uplift",
+    ],
+    tech: ["LightweightMMM", "JAX", "Python", "SQL", "Tableau"],
+    github: "https://github.com/PranavR-11/LightweightMMM",
+    category: "Data Science",
+  },
+  {
+    title: "TransferEconomics",
+    description:
+      "Engineered a log-linear OLS valuation model on an independently compiled panel of 8,490 player-seasons from Europe's top 5 leagues, constructing a composite performance index and controlling for wages, age, position and prior value to isolate transfer timing and origin effects.",
+    highlights: [
+      "Log-linear OLS valuation model on 8,490 player-seasons panel",
+      "Measured significant mid-season valuation penalty and homegrown discount",
+      "Produced ranked undervaluation lists and interactive Tableau scouting dashboard",
+    ],
+    tech: ["Python", "Pandas", "Statsmodels", "Tableau"],
+    github: "https://github.com/PranavR-11/football_economic_analysis",
+    category: "Data Science",
+  },
+  {
     title: "CharGen | 3D Character Generation",
     description:
       "AI-powered 3D character synthesis from text descriptions using dual stable diffusion pipelines, DECA model for facial processing, and FReMP framework deployment. Published research paper on text-to-3D synthesis techniques.",
@@ -203,7 +229,7 @@ export default function Projects() {
                     src={latestProject.video}
                     controls
                     className="w-full h-full object-cover"
-                    poster="/portfolio/art/bp.jpeg"
+                    poster="/portfolio/LinkedinClip-Cover.jpg"
                   >
                     Your browser does not support the video tag.
                   </video>
