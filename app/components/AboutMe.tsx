@@ -59,10 +59,8 @@ export default function AboutMe() {
             {`// INTRODUCTION`}
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 w-full flex justify-center">
-            <span className="text-white">About</span>{" "}
-            <span className="bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
-              Me
-            </span>
+            <span className="text-white">About</span>
+            <span className="text-white ml-2">Me</span>
           </h2>
         </div>
 
@@ -75,7 +73,7 @@ export default function AboutMe() {
                 With a strong foundation in computer science from{" "}
                 <span className="font-bold text-cyber-primary">PES University</span>, I&apos;ve
                 honed my expertise in Python, full-stack development, and data-driven
-                decision-making. Currently pursuing a Master&apos;s in Business Analytics
+                decision-making. Having recently completed my Master&apos;s in Business Analytics
                 at{" "}
                 <span className="font-bold text-cyber-primary">Babson College</span>, I
                 bring a unique blend of{" "}
@@ -128,7 +126,7 @@ export default function AboutMe() {
                   <p className="text-sm text-gray-400">MS in Business Analytics</p>
                 </div>
               </div>
-              <p className="text-xs text-gray-500 font-mono">Current</p>
+              <p className="text-xs text-gray-500 font-mono">Completed</p>
             </div>
 
             <div className="glass-card p-6 hover:neon-border transition-all duration-300 group">

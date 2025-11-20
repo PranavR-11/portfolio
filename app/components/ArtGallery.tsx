@@ -26,10 +26,8 @@ const ArtGallery = () => {
             {`// CREATIVE WORK`}
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 w-full flex justify-center">
-            <span className="text-white">Art</span>{" "}
-            <span className="bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
-              Gallery
-            </span>
+            <span className="text-white">Art</span>
+            <span className="text-white ml-2">Gallery</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             A collection of digital artwork and illustrations

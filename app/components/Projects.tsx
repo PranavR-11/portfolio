@@ -91,10 +91,8 @@ export default function Projects() {
             {`// PORTFOLIO`}
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 w-full flex justify-center">
-            <span className="text-white">Featured</span>{" "}
-            <span className="bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
-              Projects
-            </span>
+            <span className="text-white">Featured</span>
+            <span className="text-white ml-2">Projects</span>
           </h2>
           <p className="text-gray-400 max-w-2xl text-center">
             Innovative solutions combining data science, machine learning, and full-stack development

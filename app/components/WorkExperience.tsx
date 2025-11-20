@@ -59,10 +59,8 @@ const WorkExperience = () => {
             {`// PROFESSIONAL JOURNEY`}
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-4 w-full flex justify-center">
-            <span className="text-white">Work</span>{" "}
-            <span className="bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
-              Experience
-            </span>
+            <span className="text-white">Work</span>
+            <span className="text-white ml-2">Experience</span>
           </h2>
         </div>
 
