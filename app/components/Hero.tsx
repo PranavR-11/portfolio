@@ -34,7 +34,7 @@ export default function Hero() {
         </div>
 
         <h1 className={`text-5xl sm:text-6xl md:text-8xl font-extrabold mb-6 leading-tight ${isGlitching ? 'animate-glitch' : ''}`}>
-          <span className="hero-name" style={{ color: 'white', filter: 'drop-shadow(0 0 20px rgba(0, 240, 255, 0.8)) drop-shadow(0 0 40px rgba(0, 240, 255, 0.5))' }}>
+          <span style={{ color: 'white' }}>
             {name}
           </span>
           <span className="text-cyber-primary blinking">_</span>
