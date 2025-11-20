@@ -58,6 +58,11 @@
       0 0 10px rgba(0, 240, 255, 0.2);
   }
 
+  .hero-name {
+    color: white !important;
+    filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.8)) drop-shadow(0 0 40px rgba(0, 240, 255, 0.5));
+  }
+
   .scanline {
     position: relative;
     overflow: hidden;
