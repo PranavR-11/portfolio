@@ -3,15 +3,14 @@
 const WorkExperience = () => {
   const experiences = [
     {
-      role: "Data Analyst Consultant",
+      role: "Software Developer",
       company: "Forfend Cybernatics",
       period: "Sep 2022 - Jul 2025",
       type: "Consulting",
       achievements: [
-        "Designed and deployed an AI-driven Vehicle Recommendation Platform for automobile showroom kiosks and sales teams, integrating customer inputs with sales, product, and demand data; boosted engagement 60% and conversions 22%",
-        "Partnered with sales leadership to turn analytics into optimized promotional campaigns, improving ROI 15%",
-        "Built loyalty and expenditure analytics to segment high-value customers, driving targeted discounts that lifted repeat purchases 18% and average transaction value 12%",
-        "Developed and maintained a Tableau dashboard tracking campaign progress, success rates, and engagement metrics, enabling rapid, data-driven adjustments",
+        "Designed and deployed a LightFM-based hybrid recommendation model within a FastAPI microservice (Dockerized on AWS with RDS backend), predicting vehicle preferences from historical sales and behavioral data; handled 20,000 monthly kiosk and sales requests with 60% higher engagement and 22% higher conversion rates",
+        "Implemented a Generative AI-powered conversational chatbot with intent classification and LangChain-based RAG retrievers for appointment booking, inventory queries, and expert assistance in automobile dealerships; reducing customer support operational expenses by 50%",
+        "Developed an Agentic AI system for shop-floor management, integrating time-series forecasting (Prophet/XGBoost) and RL-based bay allocation to monitor live queue congestion across multiple service centers. Orchestrated decisions via a LangGraph agent and delivered insights through a live analytics dashboard with predictive workload optimization, improving operational efficiency by 60%",
       ],
     },
     {

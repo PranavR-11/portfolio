@@ -21,7 +21,7 @@ const latestProject = {
     "IoT/manufacturing teams gain anomaly explanations with prioritized inspection checklists.",
     "Regulated industries turn policy documents into actionable product tasks and compliance steps.",
   ],
-  video: "/LinkedinClip.mp4",
+  video: "/portfolio/LinkedinClip.mp4",
   demoUrl: "https://footballbase.netlify.app",
   videoCaption: "Short walkthrough demo",
   connectionNote:
@@ -203,7 +203,7 @@ export default function Projects() {
                     src={latestProject.video}
                     controls
                     className="w-full h-full object-cover"
-                    poster="/art/bp.jpeg"
+                    poster="/portfolio/art/bp.jpeg"
                   >
                     Your browser does not support the video tag.
                   </video>
