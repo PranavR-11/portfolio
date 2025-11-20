@@ -129,7 +129,7 @@ export default function Projects() {
 
         <div className="mb-12">
           <div className="uppercase tracking-[0.3em] text-xs text-gray-400 text-center mb-4 font-mono">
-            // LATEST PROJECT
+            {`// LATEST PROJECT`}
           </div>
           <div className="bg-stone-100 text-stone-900 border-4 border-stone-900 rounded-xl shadow-[0_25px_80px_rgba(0,0,0,0.35)] p-8 md:p-10 font-serif relative overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-6 bg-stone-900/5 pointer-events-none"></div>
