@@ -82,6 +82,7 @@ const projects = [
 ];
 
 export default function Projects() {
+  // Updated: Headers now use flex justify-center for proper centering
   return (
     <section id="projects" className="relative py-20 px-6 cyber-grid-bg">
       <div className="container mx-auto">
