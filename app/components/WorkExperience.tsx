@@ -6,7 +6,7 @@ const WorkExperience = () => {
       role: "Software Developer",
       company: "Forfend Cybernatics",
       period: "Sep 2022 - Jul 2025",
-      type: "Consulting",
+      type: "Engineering",
       achievements: [
         "Designed and deployed a LightFM-based hybrid recommendation model within a FastAPI microservice (Dockerized on AWS with RDS backend), predicting vehicle preferences from historical sales and behavioral data; handled 20,000 monthly kiosk and sales requests with 60% higher engagement and 22% higher conversion rates",
         "Implemented a Generative AI-powered conversational chatbot with intent classification and LangChain-based RAG retrievers for appointment booking, inventory queries, and expert assistance in automobile dealerships; reducing customer support operational expenses by 50%",
