@@ -99,7 +99,7 @@ export default function Hero() {
             <i className="fab fa-linkedin text-2xl text-cyber-primary group-hover:scale-110 transition-transform"></i>
           </a>
           <a
-            href="mailto:prebala1@babson.edu"
+            href="mailto:navrebala@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative p-3 glass-card hover:neon-border transition-all duration-300"
