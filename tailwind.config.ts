@@ -1,55 +1,56 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        cyber: {
-          dark: '#0a0a0f',
-          darker: '#050508',
-          primary: '#00f0ff',
-          secondary: '#ff00ff',
-          accent: '#7c3aed',
-          pink: '#ff006e',
-          green: '#39ff14',
+        // Near-black neutral ramp — the canvas everything sits on.
+        ink: {
+          950: "#08080B",
+          900: "#0B0B10",
+          850: "#101017",
+          800: "#15151E",
+          700: "#1D1D28",
+          600: "#282835",
         },
+        // Foreground ramp.
+        fg: {
+          DEFAULT: "#ECECF1",
+          muted: "#9E9EAE",
+          faint: "#6B6B7B",
+        },
+        // Single accent: iris.
+        iris: {
+          200: "#D6CEFF",
+          300: "#B4A5FF",
+          400: "#9781FF",
+          500: "#7C5CF5",
+          600: "#6743DD",
+          700: "#5233B4",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter Variable", "Inter", "system-ui", "sans-serif"],
+        serif: ["Instrument Serif", "Georgia", "serif"],
+        mono: ["JetBrains Mono Variable", "ui-monospace", "monospace"],
+      },
+      letterSpacing: {
+        tightest: "-0.045em",
+        snug: "-0.03em",
+      },
+      maxWidth: {
+        content: "72rem",
+        prose: "42rem",
       },
       animation: {
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'float': 'float 6s ease-in-out infinite',
-        'glitch': 'glitch 1s linear infinite',
+        "fade-up": "fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
       keyframes: {
-        glow: {
-          '0%': {
-            'box-shadow': '0 0 5px rgba(0, 240, 255, 0.5), 0 0 10px rgba(0, 240, 255, 0.3)',
-          },
-          '100%': {
-            'box-shadow': '0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.6)',
-          },
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(14px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glitch: {
-          '0%, 100%': { transform: 'translate(0)' },
-          '33%': { transform: 'translate(-2px, 2px)' },
-          '66%': { transform: 'translate(2px, -2px)' },
-        },
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'cyber-grid': 'linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px)',
-      },
-      backgroundSize: {
-        'grid': '50px 50px',
       },
     },
   },

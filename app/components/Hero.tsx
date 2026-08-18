@@ -1,121 +1,83 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import ParticleField from "./ParticleField";
+import { headline, profile, stats } from "../lib/site";
 
 export default function Hero() {
-  const name = "Pranav Rebala";
-  const [isGlitching, setIsGlitching] = useState(false);
-
-  useEffect(() => {
-    // Random glitch effect
-    const glitchInterval = setInterval(() => {
-      setIsGlitching(true);
-      setTimeout(() => setIsGlitching(false), 200);
-    }, 3000);
-
-    return () => clearInterval(glitchInterval);
-  }, []);
-
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 cyber-grid-bg overflow-hidden"
+      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-6 pb-20 pt-32"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-cyber-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyber-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-cyber-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-      </div>
+      {/* WebGL surface, then two scrims: a vertical one that keeps the type on
+          darker ground, and a vignette that closes the edges of the frame. */}
+      <ParticleField />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#08080B_0%,rgba(8,8,11,0.9)_32%,rgba(8,8,11,0.5)_56%,rgba(8,8,11,0.28)_74%,rgba(8,8,11,0.85)_100%)]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_75%_at_50%_35%,transparent_35%,rgba(8,8,11,0.6)_75%,#08080B_100%)]"
+      />
+      <div aria-hidden className="grain pointer-events-none absolute inset-0" />
 
-      {/* Content */}
-      <div className="relative z-10">
-        <div className="mb-4">
-          <span className="text-cyber-primary font-mono text-sm sm:text-base tracking-wider">
-            {`> SYSTEM INITIALIZED_`}
+      <div className="relative mx-auto w-full max-w-content">
+        {/* Availability pill */}
+        <div className="animate-fade-up opacity-0 [animation-delay:100ms]">
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 backdrop-blur-sm">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris-400 opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-iris-300" />
+            </span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg-muted">
+              {profile.availability}
+            </span>
           </span>
         </div>
 
-        <h1 className={`text-5xl sm:text-6xl md:text-8xl font-extrabold mb-6 leading-tight ${isGlitching ? 'animate-glitch' : ''}`}>
-          <span style={{ color: 'white' }}>
-            {name}
-          </span>
-          <span className="text-cyber-primary blinking">_</span>
+        <h1 className="mt-8 max-w-5xl text-balance text-[2.75rem] font-semibold leading-[1.03] tracking-tightest opacity-0 animate-fade-up [animation-delay:200ms] sm:text-6xl md:text-7xl lg:text-[5.25rem]">
+          {headline.lead}{" "}
+          <span className="accent-serif pr-1">{headline.accent}</span>{" "}
+          {headline.trail}
         </h1>
 
-        <div className="space-y-2 mb-8">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-300 font-mono">
-            <span className="text-cyber-secondary">[</span>
-            Data Analyst
-            <span className="text-cyber-secondary"> | </span>
-            ML Engineer
-            <span className="text-cyber-secondary">]</span>
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Transforming data into actionable insights through{" "}
-            <span className="text-cyber-primary font-semibold">Machine Learning</span>,{" "}
-            <span className="text-cyber-secondary font-semibold">Analytics</span>, and{" "}
-            <span className="text-cyber-accent font-semibold">Full-Stack Development</span>
-          </p>
+        <p className="mt-8 max-w-2xl text-pretty text-base leading-relaxed text-fg-muted opacity-0 animate-fade-up [animation-delay:320ms] sm:text-lg">
+          {headline.sub}
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center gap-3 opacity-0 animate-fade-up [animation-delay:440ms]">
+          <a href="#work" className="btn-primary">
+            See my work
+            <span aria-hidden>↓</span>
+          </a>
+          <a
+            href={profile.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost"
+          >
+            Résumé
+            <span aria-hidden>↗</span>
+          </a>
+          <span className="ml-1 hidden font-mono text-xs text-fg-faint sm:inline">
+            {profile.location}
+          </span>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a
-            href="/Pranav_Resume.pdf"
-            className="group relative px-8 py-3 bg-transparent neon-border rounded-lg text-cyber-primary font-mono font-semibold hover:bg-cyber-primary/10 transition-all duration-300 overflow-hidden"
-            target="_blank"
-            rel="noopener noreferrer"
-            download
-          >
-            <span className="relative z-10">DOWNLOAD_CV.exe</span>
-            <div className="absolute inset-0 bg-cyber-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-          </a>
-          <a
-            href="#projects"
-            className="group relative px-8 py-3 bg-cyber-primary/10 border border-cyber-primary/30 rounded-lg text-cyber-primary font-mono font-semibold hover:bg-cyber-primary/20 transition-all duration-300"
-          >
-            <span className="relative z-10">VIEW_PROJECTS</span>
-          </a>
-        </div>
-
-        {/* Social Links */}
-        <div className="flex gap-6 justify-center mb-16">
-          <a
-            href="https://github.com/PranavR-11"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative p-3 glass-card hover:neon-border transition-all duration-300"
-            aria-label="GitHub"
-          >
-            <i className="fab fa-github text-2xl text-cyber-primary group-hover:scale-110 transition-transform"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/pranavrebala/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative p-3 glass-card hover:neon-border transition-all duration-300"
-            aria-label="LinkedIn"
-          >
-            <i className="fab fa-linkedin text-2xl text-cyber-primary group-hover:scale-110 transition-transform"></i>
-          </a>
-          <a
-            href="mailto:navrebala@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative p-3 glass-card hover:neon-border transition-all duration-300"
-            aria-label="Email"
-          >
-            <i className="fas fa-envelope text-2xl text-cyber-primary group-hover:scale-110 transition-transform"></i>
-          </a>
-        </div>
-
-        {/* Scroll indicator - placed below social links */}
-        <div className="flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-cyber-primary/50 text-xs font-mono">SCROLL</span>
-          <div className="w-6 h-10 border-2 border-cyber-primary/30 rounded-full p-1">
-            <div className="w-1 h-2 bg-cyber-primary rounded-full mx-auto animate-pulse"></div>
-          </div>
-        </div>
+        {/* Credibility numbers, pulled from the work below. */}
+        <dl className="mt-20 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/[0.07] pt-10 opacity-0 animate-fade-up [animation-delay:560ms] md:grid-cols-4">
+          {stats.map((stat) => (
+            <div key={stat.label}>
+              <dt className="text-3xl font-semibold tracking-snug text-fg sm:text-4xl">
+                {stat.value}
+              </dt>
+              <dd className="mt-2 max-w-[16rem] text-sm leading-snug text-fg-faint">
+                {stat.label}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

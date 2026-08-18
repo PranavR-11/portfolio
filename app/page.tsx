@@ -1,29 +1,25 @@
-import './globals.css';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import AboutMe from "./components/AboutMe";
-import Skills from "./components/Skills";
+import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import Education from "./components/Education";
-import WorkExperience from "./components/WorkExperience";
+import AboutMe from "./components/AboutMe";
+import Research from "./components/Research";
 import ArtGallery from "./components/ArtGallery";
-import Publications from "./components/Publications";
-import Certifications from "./components/Certifications";
-
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <AboutMe />
-      <Skills />
-      <Education />
-      <WorkExperience />
-      <Projects />
-      <Publications />
-      <Certifications />
-      <ArtGallery />
+      <main id="main">
+        <Hero />
+        <Experience />
+        <Projects />
+        <AboutMe />
+        <Research />
+        <ArtGallery />
+      </main>
+      <Contact />
     </>
   );
 }
