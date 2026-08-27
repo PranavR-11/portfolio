@@ -4,12 +4,12 @@ import "./globals.css";
 import { profile } from "./lib/site";
 
 const description =
-  "Pranav Rebala is an ML engineer and data analyst in Boston — recommendation engines, RAG assistants and agentic systems in production, plus two IEEE publications.";
+  "Pranav Rebala is an ML engineer and data analyst in Boston. Recommendation engines, RAG assistants and agentic systems in production, plus two IEEE publications.";
 
 export const metadata: Metadata = {
   title: {
-    default: `${profile.name} — ${profile.role}`,
-    template: `%s — ${profile.name}`,
+    default: `${profile.name}, ${profile.role}`,
+    template: `%s | ${profile.name}`,
   },
   description,
   keywords: [
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
   creator: profile.name,
   openGraph: {
     type: "website",
-    title: `${profile.name} — ${profile.role}`,
+    title: `${profile.name}, ${profile.role}`,
     description,
     siteName: `${profile.name} · Portfolio`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} — ${profile.role}`,
+    title: `${profile.name}, ${profile.role}`,
     description,
   },
   robots: { index: true, follow: true },
@@ -66,6 +66,8 @@ export default function RootLayout({
         </a>
 
         {children}
+
+        <div aria-hidden className="grain-overlay" />
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1TQN5YR32B"

@@ -2,12 +2,16 @@ import type { ReactNode } from "react";
 import Reveal from "./Reveal";
 
 /**
- * Standard section shell: consistent vertical rhythm, max width, and the
- * numbered eyebrow + heading pair that opens every section on the page.
+ * Standard section shell: consistent rhythm, max width, heading.
+ *
+ * `eyebrow` is deliberately optional and rationed. Putting a small uppercase
+ * label above every section header produces a templated rhythm where every
+ * section looks like every other one. The page allows two, total. Everywhere
+ * else the headline carries the section on its own, and position on the page
+ * supplies the rest of the context.
  */
 export default function Section({
   id,
-  index,
   eyebrow,
   title,
   lede,
@@ -15,9 +19,7 @@ export default function Section({
   className = "",
 }: {
   id: string;
-  /** Two-digit marker shown before the eyebrow, e.g. "02". */
-  index: string;
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   lede?: string;
   children: ReactNode;
@@ -30,20 +32,19 @@ export default function Section({
     >
       <div className="mx-auto w-full max-w-content">
         <Reveal>
-          <div className="flex items-center gap-4">
-            <span className="font-mono text-[11px] tabular-nums text-iris-400">
-              {index}
-            </span>
-            <span className="eyebrow">{eyebrow}</span>
-            <span className="rule flex-1" />
-          </div>
+          {eyebrow && (
+            <div className="mb-5 flex items-center gap-4">
+              <span className="eyebrow">{eyebrow}</span>
+              <span className="rule w-24" />
+            </div>
+          )}
 
-          <h2 className="mt-6 max-w-3xl text-balance text-3xl font-semibold tracking-snug sm:text-4xl md:text-5xl">
+          <h2 className="max-w-3xl text-balance pb-1 text-3xl font-semibold leading-[1.12] tracking-snug sm:text-4xl md:text-5xl">
             {title}
           </h2>
 
           {lede && (
-            <p className="mt-4 max-w-prose text-pretty text-base leading-relaxed text-fg-muted">
+            <p className="mt-4 max-w-prose text-pretty leading-relaxed text-fg-muted">
               {lede}
             </p>
           )}

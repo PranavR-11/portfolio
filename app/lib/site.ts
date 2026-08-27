@@ -1,7 +1,8 @@
 /**
  * Single source of truth for everything the site renders.
- * Keeping copy here (rather than inline in components) makes it editable
- * without touching layout.
+ *
+ * Copy rule enforced here: no em-dashes or en-dashes anywhere in visible
+ * strings. Use a period, a comma, parentheses, or a colon instead.
  */
 
 /** Matches `basePath` in next.config.ts. Plain <a>/<video> URLs need it applied manually. */
@@ -15,25 +16,34 @@ export const profile = {
   name: "Pranav Rebala",
   role: "ML Engineer & Data Analyst",
   location: "Boston, MA",
-  availability: "Open to ML / data roles",
+  availability: "Open to ML and data roles",
   email: "pranav.rebala11@gmail.com",
   github: "https://github.com/PranavR-11",
   linkedin: "https://www.linkedin.com/in/pranavrebala/",
   resume: asset("/Pranav_Resume.pdf"),
 };
 
-/** Hero headline, split so one phrase can take the serif accent treatment. */
-export const headline = {
-  lead: "I build systems that turn",
-  accent: "messy data",
-  trail: "into decisions people act on.",
-  sub: "Three years shipping recommendation engines, RAG assistants and agentic tooling into production — plus two IEEE papers and a Master's in Business Analytics along the way.",
+/**
+ * One label per CTA intent, used everywhere on the page.
+ * Two different labels for the same action reads as sloppy.
+ */
+export const cta = {
+  contact: "Get in touch",
+  work: "See my work",
+  resume: "Résumé",
 };
 
-/** Pulled from real numbers in the experience and project sections below. */
+/** Hero: headline stays at 2 lines desktop, subtext under 20 words. */
+export const headline = {
+  lead: "I put machine learning",
+  emphasis: "into production.",
+  sub: "Recommendation engines, RAG assistants and agentic systems that real users hit every day.",
+};
+
+/** Real numbers, pulled from the experience and project sections below. */
 export const stats = [
   { value: "20K", label: "monthly requests served in production" },
-  { value: "50%", label: "cut in support cost from the AI assistant" },
+  { value: "3", label: "ML systems owned end to end" },
   { value: "8,490", label: "player-seasons modelled for valuation" },
   { value: "2", label: "peer-reviewed IEEE publications" },
 ];
@@ -41,25 +51,20 @@ export const stats = [
 export const about = {
   paragraphs: [
     "I started in computer science at PES University in Bangalore, spent three years building production systems for an automotive tech company, then took a Master's in Business Analytics at Babson to get sharper about the business end of the work.",
-    "The through-line is the same either way: I like the messy middle — the part where a model has to leave a notebook, survive real traffic, and actually change what somebody does on a Tuesday. Most of my work sits where machine learning, data engineering and product meet.",
+    "The through-line is the same either way. I like the messy middle: the part where a model has to leave a notebook, survive real traffic, and actually change what somebody does on a Tuesday. Most of my work sits where machine learning, data engineering and product meet.",
     "Outside of that I draw, follow far too much football, and speak English, Hindi, Telugu and Kannada.",
-  ],
-  facts: [
-    { label: "Based in", value: "Boston, MA" },
-    { label: "Focus", value: "ML engineering, applied analytics" },
-    { label: "Currently", value: "Open to new roles" },
   ],
 };
 
 export const education = [
   {
-    period: "2024 — 2025",
+    period: "2024 to 2025",
     school: "Babson College",
     degree: "MS, Business Analytics",
     location: "Wellesley, MA",
   },
   {
-    period: "2020 — 2024",
+    period: "2020 to 2024",
     school: "PES University",
     degree: "BS, Computer Science",
     location: "Bangalore, India",
@@ -70,26 +75,26 @@ export const experience = [
   {
     company: "Forfend Cybernatics",
     role: "Software Developer",
-    period: "Sep 2022 — Jul 2025",
+    period: "Sep 2022 to Jul 2025",
     kind: "Full-time",
     summary:
       "Owned three production ML systems for automobile dealerships, from model design through deployment.",
     points: [
-      "Built a LightFM hybrid recommender behind a Dockerized FastAPI service on AWS, predicting vehicle preferences from sales and behavioural history — 20K monthly kiosk and sales requests, 60% higher engagement and 22% higher conversion.",
-      "Shipped a generative-AI assistant using intent classification and LangChain RAG retrievers for bookings, inventory queries and expert help, cutting support operating costs by half.",
-      "Designed an agentic shop-floor system pairing Prophet/XGBoost forecasting with RL-based bay allocation, orchestrated through LangGraph and surfaced in a live dashboard — 60% better operational efficiency.",
+      "Built a LightFM hybrid recommender behind a Dockerized FastAPI service on AWS, predicting vehicle preferences from sales and behavioural history. 20K monthly kiosk and sales requests, 60% higher engagement, 22% higher conversion.",
+      "Shipped a generative AI assistant using intent classification and LangChain RAG retrievers for bookings, inventory queries and expert help, cutting support operating costs by half.",
+      "Designed an agentic shop-floor system pairing Prophet and XGBoost forecasting with RL-based bay allocation, orchestrated through LangGraph and surfaced in a live dashboard. 60% better operational efficiency.",
     ],
     stack: ["Python", "FastAPI", "LangChain", "LangGraph", "AWS", "Docker"],
   },
   {
     company: "Rezolve AI",
     role: "Full Stack Intern",
-    period: "Jan — Feb 2024",
+    period: "Jan to Feb 2024",
     kind: "Internship",
     summary:
       "Led a small team building leadership dashboards over Azure-hosted financial data.",
     points: [
-      "Delivered real-time dashboards for Wipro's BFS delivery vertical, giving leadership visibility into metrics across a 230,000-person global workforce.",
+      "Delivered real-time dashboards for Wipro's BFS delivery vertical, giving leadership visibility into metrics across a 230,000 person global workforce.",
       "Added role-based access controls for compliant data visibility, and streamlined ingestion to cut manual reporting time by 40%.",
     ],
     stack: ["Azure", "React", "SQL", "RBAC"],
@@ -97,12 +102,12 @@ export const experience = [
   {
     company: "Wipro Ltd",
     role: "Full Stack Intern",
-    period: "Jul — Oct 2023",
+    period: "Jul to Oct 2023",
     kind: "Internship",
     summary:
       "Built and deployed an internal resource-tracking portal end to end.",
     points: [
-      "Developed the React/Vite dashboard frontend and Node/Express API over MS SQL, improving how teams tracked project utilisation.",
+      "Developed the React and Vite dashboard frontend with a Node and Express API over MS SQL, improving how teams tracked project utilisation.",
       "Handled Azure deployment with Functions for dynamic scaling, and integrated Azure AD for granular role-based access.",
     ],
     stack: ["React", "Node.js", "Express", "MS SQL", "Azure"],
@@ -110,7 +115,7 @@ export const experience = [
   {
     company: "Flutura Business Solutions",
     role: "Data Science Intern",
-    period: "Jun — Aug 2022",
+    period: "Jun to Aug 2022",
     kind: "Internship",
     summary: "Drone telemetry analysis and digital-twin prototyping.",
     points: [
@@ -122,12 +127,11 @@ export const experience = [
 ];
 
 export const featured = {
-  eyebrow: "Latest build",
   title: "FootballBase",
   subtitle: "Real-time football analytics, answered in plain language",
   summary:
-    "A multilingual RAG assistant that turns raw match datasets into conversational insight — cited answers, generated charts, and exportable assets, streamed as they're produced.",
-  why: "I wanted one workflow where an analyst asks a plain-language question and gets back a data-backed answer, a chart, and something they can drop straight into a deck — no notebook, no SQL, no waiting.",
+    "A multilingual RAG assistant that turns raw match datasets into conversational insight: cited answers, generated charts, and exportable assets, streamed as they are produced.",
+  why: "I wanted one workflow where an analyst asks a plain-language question and gets back a data-backed answer, a chart, and something they can drop straight into a deck. No notebook, no SQL, no waiting.",
   architecture: [
     {
       label: "Frontend",
@@ -137,7 +141,7 @@ export const featured = {
     {
       label: "Backend",
       detail:
-        "FastAPI streams JSON and matplotlib charts; LangChain orchestrates tool calls with LLM-driven intent classification and slot filling.",
+        "FastAPI streams JSON and matplotlib charts. LangChain orchestrates tool calls with LLM-driven intent classification and slot filling.",
     },
     {
       label: "Retrieval",
@@ -172,7 +176,7 @@ export const projects = [
     points: [
       "Posterior predictive estimates with parameterised scenario grids",
       "Interactive Tableau layer for reallocation decisions",
-      "Pilot reallocation projected ~9% incremental revenue",
+      "Pilot reallocation projected 9% incremental revenue",
     ],
     stack: ["LightweightMMM", "JAX", "Python", "Tableau"],
     href: "https://github.com/PranavR-11/LightweightMMM",
@@ -194,7 +198,7 @@ export const projects = [
     linkLabel: "Repository",
   },
   {
-    title: "CharGen — 3D Character Generation",
+    title: "CharGen, 3D Character Generation",
     category: "AI / ML",
     year: "2024",
     description:
@@ -213,7 +217,7 @@ export const projects = [
     category: "AI / ML",
     year: "2023",
     description:
-      "Supervised model for picking an optimal playing eleven from player statistics, match performance and historical data — also published at IEEE I2CT.",
+      "Supervised model for picking an optimal playing eleven from player statistics, match performance and historical data, also published at IEEE I2CT.",
     points: [
       "Player performance analysis across seasons",
       "Data-driven team composition under constraints",
@@ -331,7 +335,7 @@ export const certifications = [
     href: "https://www.credly.com/badges/4f29106d-052b-4269-ac8b-ee3a0d6b50b6?source=linked_in_profile",
   },
   {
-    title: "AWS Educate — Introduction to Cloud 101",
+    title: "AWS Educate, Introduction to Cloud 101",
     issuer: "Amazon Web Services",
     year: "2023",
     href: "https://www.credly.com/badges/3821164c-f6b7-461c-bf85-d51176279c27/public_url",

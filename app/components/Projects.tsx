@@ -3,29 +3,24 @@
 import { useMemo, useState } from "react";
 import Section from "./Section";
 import Reveal from "./Reveal";
-import { featured, profile, projects } from "../lib/site";
+import { cta, featured, profile, projects } from "../lib/site";
 
 function FeaturedProject() {
   return (
     <Reveal>
-      <article className="surface grain relative overflow-hidden">
+      <article className="surface relative overflow-hidden">
         {/* Accent wash across the top edge */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-iris-400/60 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-500/50 to-transparent"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/4 h-64 w-[36rem] rounded-full bg-iris-600/15 blur-[100px]"
+          className="pointer-events-none absolute -top-32 left-1/4 h-64 w-[36rem] rounded-full bg-signal-600/10 blur-[100px]"
         />
 
         <div className="relative grid gap-10 p-6 sm:p-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="eyebrow text-iris-300">{featured.eyebrow}</span>
-              <span className="rule w-12" />
-            </div>
-
             <h3 className="mt-5 text-3xl font-semibold tracking-snug sm:text-4xl">
               {featured.title}
             </h3>
@@ -50,7 +45,7 @@ function FeaturedProject() {
                     key={row.label}
                     className="grid gap-1 border-l border-white/10 pl-4 sm:grid-cols-[7rem_1fr] sm:gap-4 sm:border-0 sm:pl-0"
                   >
-                    <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-iris-300 sm:pt-0.5">
+                    <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal-400 sm:pt-0.5">
                       {row.label}
                     </dt>
                     <dd className="text-pretty text-sm leading-relaxed text-fg-faint">
@@ -71,15 +66,15 @@ function FeaturedProject() {
                 Visit the live site
                 <span aria-hidden>↗</span>
               </a>
-              <a href={`mailto:${profile.email}`} className="btn-ghost">
-                Talk to me about it
+              <a href="#contact" className="btn-ghost">
+                {cta.contact}
               </a>
             </div>
           </div>
 
           {/* Demo + capabilities */}
           <div className="lg:pt-2">
-            <div className="overflow-hidden rounded-xl border border-white/10 bg-black shadow-2xl shadow-black/50">
+            <div className="overflow-hidden rounded-xl border border-white/10 bg-ink-950 shadow-2xl shadow-black/40">
               <video
                 src={featured.video}
                 poster={featured.poster}
@@ -101,7 +96,7 @@ function FeaturedProject() {
                   key={cap}
                   className="flex items-start gap-3 text-sm text-fg-muted"
                 >
-                  <span aria-hidden className="mt-0.5 text-iris-400">
+                  <span aria-hidden className="mt-0.5 text-signal-500">
                     ▸
                   </span>
                   <span className="text-pretty">{cap}</span>
@@ -136,14 +131,12 @@ export default function Projects() {
   return (
     <Section
       id="projects"
-      index="02"
-      eyebrow="Selected projects"
       title={
         <>
-          Things I&apos;ve <span className="accent-serif">built</span>
+          Things I&apos;ve <span className="italic text-signal-400">built</span>
         </>
       }
-      lede="A mix of production systems, research code and analysis I did because the question wouldn't leave me alone."
+      lede="A mix of production systems, research code, and analysis I did because the question would not leave me alone."
     >
       <FeaturedProject />
 
@@ -179,7 +172,7 @@ export default function Projects() {
                 </span>
               </div>
 
-              <h3 className="mt-5 text-xl font-semibold tracking-snug transition-colors group-hover:text-iris-200">
+              <h3 className="mt-5 text-xl font-semibold tracking-snug transition-colors group-hover:text-signal-300">
                 {project.title}
               </h3>
 

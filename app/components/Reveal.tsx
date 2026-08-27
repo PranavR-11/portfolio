@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 
 /**
  * Fades and lifts its children in once they scroll into view.
- * Unobserves after the first reveal — this never needs to run twice.
+ * Unobserves after the first reveal, since this never needs to run twice.
  */
 export default function Reveal({
   children,

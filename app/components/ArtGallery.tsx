@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Section from "./Section";
 import Reveal from "./Reveal";
+import { X, ArrowLeft, ArrowRight } from "lucide-react";
 import { artwork } from "../lib/site";
 
 export default function ArtGallery() {
@@ -40,16 +41,14 @@ export default function ArtGallery() {
   return (
     <Section
       id="gallery"
-      index="05"
-      eyebrow="Off the clock"
       title={
         <>
-          I also <span className="accent-serif">draw</span>
+          I also <span className="italic text-signal-400">draw</span>
         </>
       }
       lede="Pencil and digital work, mostly done at hours I should have been asleep."
     >
-      {/* Masonry via CSS columns — keeps each piece at its natural ratio. */}
+      {/* Masonry via CSS columns, so each piece keeps its natural ratio. */}
       <div className="columns-2 gap-4 md:columns-3 lg:columns-4 [&>*]:mb-4">
         {artwork.map((art, i) => (
           <Reveal key={art.src} delay={Math.min(i, 8) * 45}>
@@ -67,7 +66,7 @@ export default function ArtGallery() {
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
               />
-              <span className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <span className="absolute inset-x-0 bottom-0 translate-y-2 p-4 text-left text-sm text-fg opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                 {art.title}
               </span>
@@ -91,14 +90,7 @@ export default function ArtGallery() {
             aria-label="Close"
             className="absolute right-5 top-5 rounded-full border border-white/15 p-2.5 text-fg transition-colors hover:bg-white/10"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path
-                d="M6 6l12 12M18 6L6 18"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              />
-            </svg>
+            <X size={18} strokeWidth={1.8} aria-hidden />
           </button>
 
           {[-1, 1].map((dir) => (
@@ -114,15 +106,11 @@ export default function ArtGallery() {
                 dir === 1 ? "right-4 sm:right-8" : "left-4 sm:left-8"
               }`}
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path
-                  d={dir === 1 ? "M9 5l7 7-7 7" : "M15 5l-7 7 7 7"}
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              {dir === 1 ? (
+                <ArrowRight size={18} strokeWidth={1.8} aria-hidden />
+              ) : (
+                <ArrowLeft size={18} strokeWidth={1.8} aria-hidden />
+              )}
             </button>
           ))}
 
@@ -138,7 +126,7 @@ export default function ArtGallery() {
               className="max-h-[80vh] w-auto rounded-lg object-contain"
             />
             <figcaption className="mt-4 text-center font-mono text-xs uppercase tracking-[0.18em] text-fg-faint">
-              {current.title} · {index! + 1} / {artwork.length}
+              {current.title}
             </figcaption>
           </figure>
         </div>

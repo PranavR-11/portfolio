@@ -8,12 +8,10 @@ export default function AboutMe() {
   return (
     <Section
       id="about"
-      index="03"
-      eyebrow="About"
       title={
         <>
-          Engineer first, <span className="accent-serif">analyst</span> by
-          training
+          Engineer first, <span className="italic text-signal-400">analyst</span>{" "}
+          by training
         </>
       }
     >
@@ -31,14 +29,6 @@ export default function AboutMe() {
             ))}
           </div>
 
-          <dl className="mt-10 grid gap-px overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.06] sm:grid-cols-3">
-            {about.facts.map((fact) => (
-              <div key={fact.label} className="bg-ink-950 p-5">
-                <dt className="eyebrow">{fact.label}</dt>
-                <dd className="mt-2 text-sm text-fg">{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
         </Reveal>
 
         {/* Education */}

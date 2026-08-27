@@ -8,11 +8,9 @@ export default function Research() {
   return (
     <Section
       id="research"
-      index="04"
-      eyebrow="Research & credentials"
       title={
         <>
-          Peer-reviewed <span className="accent-serif">work</span>
+          Peer-reviewed <span className="italic text-signal-400">work</span>
         </>
       }
       lede="Two IEEE conference papers, plus the certifications worth listing."
@@ -30,12 +28,12 @@ export default function Research() {
                   className="group flex flex-col gap-3 border-t border-white/[0.07] py-7 transition-colors last:border-b hover:bg-white/[0.02]"
                 >
                   <div className="flex items-start justify-between gap-6">
-                    <h4 className="text-pretty text-lg font-medium leading-snug transition-colors group-hover:text-iris-200">
+                    <h4 className="text-pretty text-lg font-medium leading-snug transition-colors group-hover:text-signal-300">
                       {pub.title}
                     </h4>
                     <span
                       aria-hidden
-                      className="mt-1 flex-none text-fg-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-iris-300"
+                      className="mt-1 flex-none text-fg-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-signal-400"
                     >
                       ↗
                     </span>
@@ -64,7 +62,7 @@ export default function Research() {
                   className="surface surface-hover group flex items-start justify-between gap-4 p-5"
                 >
                   <div>
-                    <h4 className="text-pretty text-sm font-medium leading-snug transition-colors group-hover:text-iris-200">
+                    <h4 className="text-pretty text-sm font-medium leading-snug transition-colors group-hover:text-signal-300">
                       {cert.title}
                     </h4>
                     <p className="mt-1.5 text-xs text-fg-faint">
@@ -73,7 +71,7 @@ export default function Research() {
                   </div>
                   <span
                     aria-hidden
-                    className="flex-none text-fg-faint transition-colors group-hover:text-iris-300"
+                    className="flex-none text-fg-faint transition-colors group-hover:text-signal-400"
                   >
                     ↗
                   </span>

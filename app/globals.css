@@ -1,8 +1,6 @@
-/* Self-hosted fonts — no runtime request to a third party, no build-time network. */
-@import "@fontsource-variable/inter";
-@import "@fontsource/instrument-serif/400.css";
-@import "@fontsource/instrument-serif/400-italic.css";
-@import "@fontsource-variable/jetbrains-mono";
+/* Self-hosted fonts. Geist + Geist Mono, no third-party request at runtime. */
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 
 @tailwind base;
 @tailwind components;
@@ -11,8 +9,8 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --edge: rgba(255, 255, 255, 0.08);
-    --edge-strong: rgba(255, 255, 255, 0.14);
+    --edge: rgba(255, 255, 255, 0.07);
+    --edge-strong: rgba(255, 255, 255, 0.13);
   }
 
   html {
@@ -24,17 +22,15 @@
   body {
     @apply bg-ink-950 text-fg font-sans antialiased;
     overflow-x: hidden;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   ::selection {
-    background-color: theme("colors.iris.500");
-    color: #fff;
+    background-color: theme("colors.signal.500");
+    color: #08080a;
   }
 
-  /* Keyboard focus stays visible; mouse clicks stay clean. */
   :focus-visible {
-    outline: 2px solid theme("colors.iris.400");
+    outline: 2px solid theme("colors.signal.400");
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -55,9 +51,10 @@
 }
 
 @layer components {
-  /* Surface: the one card treatment used site-wide. */
+  /* One card treatment site-wide. One radius scale: 16px containers,
+     full-pill interactive. No mixed corner systems. */
   .surface {
-    @apply rounded-2xl border bg-ink-900/60 backdrop-blur-xl;
+    @apply rounded-2xl border bg-ink-900/70;
     border-color: var(--edge);
   }
 
@@ -67,23 +64,21 @@
 
   .surface-hover:hover {
     border-color: var(--edge-strong);
-    background-color: rgb(21 21 30 / 0.7);
+    background-color: rgb(22 23 28 / 0.8);
     transform: translateY(-2px);
   }
 
-  /* Small uppercase label that opens each section. */
+  /* Rationed: at most two of these on the page (see Section eyebrow rule). */
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.22em] text-fg-faint;
+    @apply font-mono text-[11px] uppercase tracking-[0.2em] text-fg-faint;
   }
 
-  /* Hairline that fades at both ends — used instead of hard borders. */
   .rule {
     height: 1px;
     background: linear-gradient(
       90deg,
-      transparent,
-      var(--edge-strong) 20%,
-      var(--edge-strong) 80%,
+      var(--edge-strong),
+      var(--edge-strong) 70%,
       transparent
     );
   }
@@ -94,26 +89,18 @@
     background-color: rgb(255 255 255 / 0.02);
   }
 
-  /* Accent word treatment: italic serif against the grotesk. */
-  .accent-serif {
-    @apply font-serif italic text-iris-300;
-    font-weight: 400;
-  }
-
-  /* Primary button. */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-fg px-6 py-3
-           text-sm font-medium text-ink-950 transition-all duration-300 hover:bg-white;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-fg px-6 py-3
+           text-sm font-medium text-ink-950 transition-all duration-200 hover:bg-white;
   }
 
-  .btn-primary:hover {
-    box-shadow: 0 0 0 4px rgb(255 255 255 / 0.08);
+  .btn-primary:active {
+    transform: scale(0.98);
   }
 
-  /* Secondary button. */
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3
-           text-sm font-medium text-fg transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border px-6 py-3
+           text-sm font-medium text-fg transition-all duration-200;
     border-color: var(--edge-strong);
   }
 
@@ -122,14 +109,17 @@
     border-color: rgb(255 255 255 / 0.25);
   }
 
-  /* Underline that draws in from the left on hover. */
+  .btn-ghost:active {
+    transform: scale(0.98);
+  }
+
   .link-underline {
-    @apply relative inline-flex items-center gap-1.5 text-fg transition-colors hover:text-iris-300;
+    @apply relative inline-flex items-center gap-1.5 text-fg transition-colors hover:text-signal-400;
   }
 
   .link-underline::after {
     content: "";
-    @apply absolute -bottom-0.5 left-0 h-px w-full origin-right scale-x-0 bg-iris-400 transition-transform duration-300;
+    @apply absolute -bottom-0.5 left-0 h-px w-full origin-right scale-x-0 bg-signal-500 transition-transform duration-300;
   }
 
   .link-underline:hover::after {
@@ -138,7 +128,7 @@
 }
 
 @layer utilities {
-  /* Scroll-reveal: set by IntersectionObserver in useReveal. */
+  /* Scroll-reveal, driven by IntersectionObserver in Reveal.tsx. */
   .reveal {
     opacity: 0;
     transform: translateY(16px);
@@ -165,14 +155,15 @@
   .text-pretty {
     text-wrap: pretty;
   }
+}
 
-  /* Very low-amplitude film grain; kills banding on the large dark gradients. */
-  .grain::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
+/* Film grain. Fixed and pointer-events-none so it never repaints on scroll:
+   applying this to a scrolling container destroys mobile frame rate. */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

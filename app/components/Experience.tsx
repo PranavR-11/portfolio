@@ -8,14 +8,14 @@ export default function Experience() {
   return (
     <Section
       id="work"
-      index="01"
       eyebrow="Experience"
       title={
         <>
-          Where I&apos;ve <span className="accent-serif">shipped</span> things
+          Where I&apos;ve <span className="italic text-signal-400">shipped</span>{" "}
+          things
         </>
       }
-      lede="Four roles across automotive tech, enterprise consulting and industrial IoT — most of it spent getting models out of notebooks and into something people use daily."
+      lede="Four roles across automotive tech, enterprise consulting and industrial IoT. Most of it spent getting models out of notebooks and into something people use daily."
     >
       <ol className="relative">
         {/* Timeline spine */}
@@ -30,7 +30,7 @@ export default function Experience() {
               {/* Node on the spine */}
               <span
                 aria-hidden
-                className="absolute -left-[3.5px] top-[3.25rem] hidden h-[7px] w-[7px] rounded-full bg-ink-600 transition-colors duration-300 group-hover:bg-iris-400 md:block"
+                className="absolute -left-[3.5px] top-[3.25rem] hidden h-[7px] w-[7px] rounded-full bg-ink-600 transition-colors duration-300 group-hover:bg-signal-500 md:block"
               />
 
               <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
@@ -38,7 +38,7 @@ export default function Experience() {
                   <h3 className="text-xl font-semibold tracking-snug sm:text-2xl">
                     {job.role}
                   </h3>
-                  <p className="mt-1 text-iris-300">{job.company}</p>
+                  <p className="mt-1 text-signal-400">{job.company}</p>
                 </div>
                 <div className="mt-2 flex items-center gap-3 md:mt-0">
                   <span className="tag">{job.kind}</span>

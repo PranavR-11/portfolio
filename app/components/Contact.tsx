@@ -1,12 +1,12 @@
 "use client";
 
 import Reveal from "./Reveal";
-import { profile } from "../lib/site";
+import { cta, profile } from "../lib/site";
 
 const socials = [
   { label: "GitHub", href: profile.github },
   { label: "LinkedIn", href: profile.linkedin },
-  { label: "Résumé", href: profile.resume },
+  { label: cta.resume, href: profile.resume },
 ];
 
 export default function Contact() {
@@ -15,26 +15,18 @@ export default function Contact() {
       {/* Soft accent glow anchoring the bottom of the page */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-iris-600/20 blur-[120px]"
+        className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[52rem] -translate-x-1/2 rounded-full bg-signal-600/15 blur-[120px]"
       />
 
       <div className="relative mx-auto w-full max-w-content">
         <Reveal>
-          <div className="flex items-center gap-4">
-            <span className="font-mono text-[11px] tabular-nums text-iris-400">
-              06
-            </span>
-            <span className="eyebrow">Contact</span>
-            <span className="rule flex-1" />
-          </div>
-
-          <h2 className="mt-8 max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tightest sm:text-5xl md:text-6xl">
-            Got something worth <span className="accent-serif">building</span>?
+          <h2 className="max-w-3xl text-balance pb-1 text-4xl font-semibold leading-[1.12] tracking-tightest sm:text-5xl md:text-6xl">
+            Got something worth <span className="italic text-signal-400">building</span>?
           </h2>
 
           <p className="mt-6 max-w-prose text-pretty text-lg leading-relaxed text-fg-muted">
-            I&apos;m open to ML and data roles, and always happy to talk through
-            a problem — especially if it sits where models meet real users.
+            I&apos;m open to ML and data roles, and always happy to talk through a
+            problem, especially if it sits where models meet real users.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">

@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
  * sum of travelling sine waves in the vertex shader. Reads as a slowly breathing
  * topography rather than a generic starfield.
  *
- * Cheap on purpose — one draw call, no per-frame CPU work on the geometry, and
+ * Cheap on purpose: one draw call, no per-frame CPU work on the geometry, and
  * the loop parks itself whenever the canvas is off-screen or the tab is hidden.
  */
 export default function ParticleField() {
@@ -80,8 +80,8 @@ export default function ParticleField() {
         uTime: { value: 0 },
         uPointer: { value: new THREE.Vector2(0, 0) },
         uSize: { value: renderer.getPixelRatio() * 2.0 },
-        uColorLow: { value: new THREE.Color("#3B2F73") },
-        uColorHigh: { value: new THREE.Color("#B4A5FF") },
+        uColorLow: { value: new THREE.Color("#4A3520") },
+        uColorHigh: { value: new THREE.Color("#FFB273") },
       };
 
       const material = new THREE.ShaderMaterial({
@@ -122,10 +122,13 @@ export default function ParticleField() {
             // Fade points out toward the horizon so the grid dissolves into the
             // page background instead of ending on a hard edge.
             vFade = 1.0 - smoothstep(9.0, 27.0, -mv.z);
+            // Also fade the near field, so foreground points do not read as
+            // out-of-focus blobs sitting on top of the copy.
+            vFade *= smoothstep(3.0, 8.5, -mv.z);
             vFade *= 0.35 + aSeed * 0.65;
 
             gl_Position = projectionMatrix * mv;
-            gl_PointSize = uSize * (1.0 + vHeight * 1.1) * (14.0 / -mv.z);
+            gl_PointSize = min(uSize * (1.0 + vHeight * 1.1) * (11.0 / -mv.z), uSize * 3.2);
           }
         `,
         fragmentShader: /* glsl */ `
