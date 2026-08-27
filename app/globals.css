@@ -157,6 +157,28 @@
   }
 }
 
+/* Marquee track. Pure CSS translate on a duplicated list, so there is no
+   scroll listener and nothing to tear down. Pauses on hover so a viewer can
+   actually look at a piece, and stops entirely under reduced motion. */
+.marquee-track {
+  animation: marquee 64s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
 /* Film grain. Fixed and pointer-events-none so it never repaints on scroll:
    applying this to a scrolling container destroys mobile frame rate. */
 .grain-overlay {

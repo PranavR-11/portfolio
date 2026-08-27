@@ -342,23 +342,35 @@ export const certifications = [
   },
 ];
 
+/**
+ * `thumb` is a pre-generated 640px webp (about a quarter the weight of the
+ * original). Grid and marquee use it; the lightbox loads the full image.
+ * Regenerate with scripts/thumbnails.mjs after adding artwork.
+ */
+const art = (file: string, title: string) => ({
+  src: asset(`/art/${file}.jpeg`),
+  thumb: asset(`/art/thumbs/${file}.webp`),
+  title,
+});
+
 export const artwork = [
-  { src: asset("/art/bp.jpeg"), title: "Black Panther" },
-  { src: asset("/art/dws.jpeg"), title: "Die With A Smile" },
-  { src: asset("/art/chandler.jpeg"), title: "Chandler" },
-  { src: asset("/art/dv.jpeg"), title: "Darth Vader" },
-  { src: asset("/art/strange.jpeg"), title: "Doctor Strange" },
-  { src: asset("/art/mk.jpeg"), title: "Moon Knight" },
-  { src: asset("/art/spidergewn.jpeg"), title: "Spider-Gwen" },
-  { src: asset("/art/messi.jpeg"), title: "Messi" },
-  { src: asset("/art/3spiderman.jpeg"), title: "Three Spider-Men" },
-  { src: asset("/art/alvarez.jpeg"), title: "Álvarez" },
-  { src: asset("/art/lucifer.jpeg"), title: "Lucifer" },
-  { src: asset("/art/painting1.jpeg"), title: "Study I" },
-  { src: asset("/art/painting2.jpeg"), title: "Study II" },
+  art("bp", "Black Panther"),
+  art("dws", "Die With A Smile"),
+  art("chandler", "Chandler"),
+  art("dv", "Darth Vader"),
+  art("strange", "Doctor Strange"),
+  art("mk", "Moon Knight"),
+  art("spidergewn", "Spider-Gwen"),
+  art("messi", "Messi"),
+  art("3spiderman", "Three Spider-Men"),
+  art("alvarez", "Álvarez"),
+  art("lucifer", "Lucifer"),
+  art("painting1", "Study I"),
+  art("painting2", "Study II"),
 ];
 
 export const navLinks = [
+  { label: "FootballBase", id: "featured" },
   { label: "Work", id: "work" },
   { label: "Projects", id: "projects" },
   { label: "About", id: "about" },

@@ -20,13 +20,16 @@ const config: Config = {
           muted: "#9B9BA5",
           faint: "#6C6C78",
         },
-        // Single accent. Warm signal orange against cool near-black: high
-        // contrast, and deliberately not the default AI violet/blue glow.
+        // Single accent, sampled from Pranav's own paintings: crimson is the
+        // one vivid hue that recurs across the Vader, Doctor Strange and red
+        // painting pieces. 600 is lifted verbatim from the Vader artwork.
+        // 400 is the text-safe step (about 6:1 on ink-950); 500 is for fills
+        // and large display type only.
         signal: {
-          300: "#FFB273",
-          400: "#FF9440",
-          500: "#F5822E",
-          600: "#D2681C",
+          300: "#FFA3B5",
+          400: "#FF5C7C",
+          500: "#F0234F",
+          600: "#C41C54",
         },
       },
       fontFamily: {

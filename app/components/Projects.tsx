@@ -3,119 +3,21 @@
 import { useMemo, useState } from "react";
 import Section from "./Section";
 import Reveal from "./Reveal";
-import { cta, featured, profile, projects } from "../lib/site";
+import { profile, projects } from "../lib/site";
 
-function FeaturedProject() {
-  return (
-    <Reveal>
-      <article className="surface relative overflow-hidden">
-        {/* Accent wash across the top edge */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-500/50 to-transparent"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/4 h-64 w-[36rem] rounded-full bg-signal-600/10 blur-[100px]"
-        />
-
-        <div className="relative grid gap-10 p-6 sm:p-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
-          <div>
-            <h3 className="mt-5 text-3xl font-semibold tracking-snug sm:text-4xl">
-              {featured.title}
-            </h3>
-            <p className="mt-2 text-lg text-fg-muted">{featured.subtitle}</p>
-
-            <p className="mt-6 max-w-prose text-pretty leading-relaxed text-fg-muted">
-              {featured.summary}
-            </p>
-
-            <div className="mt-8">
-              <h4 className="eyebrow">Why I built it</h4>
-              <p className="mt-3 max-w-prose text-pretty text-sm leading-relaxed text-fg-faint">
-                {featured.why}
-              </p>
-            </div>
-
-            <div className="mt-8">
-              <h4 className="eyebrow">How it works</h4>
-              <dl className="mt-4 space-y-3">
-                {featured.architecture.map((row) => (
-                  <div
-                    key={row.label}
-                    className="grid gap-1 border-l border-white/10 pl-4 sm:grid-cols-[7rem_1fr] sm:gap-4 sm:border-0 sm:pl-0"
-                  >
-                    <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal-400 sm:pt-0.5">
-                      {row.label}
-                    </dt>
-                    <dd className="text-pretty text-sm leading-relaxed text-fg-faint">
-                      {row.detail}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a
-                href={featured.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                Visit the live site
-                <span aria-hidden>↗</span>
-              </a>
-              <a href="#contact" className="btn-ghost">
-                {cta.contact}
-              </a>
-            </div>
-          </div>
-
-          {/* Demo + capabilities */}
-          <div className="lg:pt-2">
-            <div className="overflow-hidden rounded-xl border border-white/10 bg-ink-950 shadow-2xl shadow-black/40">
-              <video
-                src={featured.video}
-                poster={featured.poster}
-                controls
-                preload="none"
-                playsInline
-                className="aspect-video w-full object-cover"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-fg-faint">
-              Walkthrough demo
-            </p>
-
-            <ul className="mt-8 space-y-3">
-              {featured.capabilities.map((cap) => (
-                <li
-                  key={cap}
-                  className="flex items-start gap-3 text-sm text-fg-muted"
-                >
-                  <span aria-hidden className="mt-0.5 text-signal-500">
-                    ▸
-                  </span>
-                  <span className="text-pretty">{cap}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 flex flex-wrap gap-2">
-              {featured.stack.map((tech) => (
-                <span key={tech} className="tag">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </article>
-    </Reveal>
-  );
+/**
+ * Asymmetric grid rather than a uniform card wall. The first two entries take
+ * wider cells and show their detail lines; the rest run compact. Cell count
+ * always matches item count, so the grid never ends on a blank tile.
+ */
+function spanFor(index: number, total: number) {
+  if (index === 0) return "md:col-span-4";
+  if (index === 1) return "md:col-span-2";
+  // Keep the final row balanced when the remaining count is odd.
+  const remaining = total - 2;
+  const posInTail = index - 2;
+  if (remaining % 2 === 1 && posInTail === remaining - 1) return "md:col-span-6";
+  return "md:col-span-3";
 }
 
 export default function Projects() {
@@ -138,10 +40,7 @@ export default function Projects() {
       }
       lede="A mix of production systems, research code, and analysis I did because the question would not leave me alone."
     >
-      <FeaturedProject />
-
-      {/* Filter */}
-      <Reveal className="mt-20">
+      <Reveal>
         <div className="flex flex-wrap items-center gap-2">
           {categories.map((cat) => (
             <button
@@ -151,7 +50,7 @@ export default function Projects() {
               aria-pressed={filter === cat}
               className={`rounded-full border px-4 py-1.5 text-sm transition-all duration-300 ${
                 filter === cat
-                  ? "border-white/25 bg-white/[0.08] text-fg"
+                  ? "border-signal-500/50 bg-signal-500/10 text-signal-300"
                   : "border-white/[0.08] text-fg-faint hover:border-white/20 hover:text-fg"
               }`}
             >
@@ -161,63 +60,87 @@ export default function Projects() {
         </div>
       </Reveal>
 
-      <div className="mt-8 grid gap-5 md:grid-cols-2">
-        {visible.map((project, i) => (
-          <Reveal key={project.title} delay={i * 60}>
-            <article className="surface surface-hover group flex h-full flex-col p-6 sm:p-7">
-              <div className="flex items-center justify-between gap-4">
-                <span className="tag">{project.category}</span>
-                <span className="font-mono text-xs tabular-nums text-fg-faint">
-                  {project.year}
-                </span>
-              </div>
+      <div className="mt-8 grid gap-4 md:grid-cols-6">
+        {visible.map((project, i) => {
+          const wide = i < 2;
+          return (
+            <Reveal
+              key={project.title}
+              delay={i * 55}
+              className={spanFor(i, visible.length)}
+            >
+              <article className="surface surface-hover group relative flex h-full flex-col overflow-hidden p-6 sm:p-7">
+                {/* Accent hairline that draws across on hover. */}
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-signal-500 to-transparent transition-transform duration-500 group-hover:scale-x-100"
+                />
 
-              <h3 className="mt-5 text-xl font-semibold tracking-snug transition-colors group-hover:text-signal-300">
-                {project.title}
-              </h3>
-
-              <p className="mt-3 text-pretty text-sm leading-relaxed text-fg-muted">
-                {project.description}
-              </p>
-
-              <ul className="mt-5 space-y-2">
-                {project.points.map((point) => (
-                  <li
-                    key={point}
-                    className="flex gap-2.5 text-xs leading-relaxed text-fg-faint"
-                  >
-                    <span
-                      aria-hidden
-                      className="mt-[0.5rem] h-px w-3 flex-none bg-white/20"
-                    />
-                    <span className="text-pretty">{point}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Pushed to the bottom so cards in a row line up */}
-              <div className="mt-auto pt-7">
-                <div className="flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <span key={tech} className="tag">
-                      {tech}
-                    </span>
-                  ))}
+                <div className="flex items-center justify-between gap-4">
+                  <span className="tag">{project.category}</span>
+                  <span className="font-mono text-xs tabular-nums text-fg-faint">
+                    {project.year}
+                  </span>
                 </div>
 
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline mt-6 text-sm"
+                <h3
+                  className={`mt-5 font-semibold tracking-snug transition-colors group-hover:text-signal-300 ${
+                    wide ? "text-2xl sm:text-3xl" : "text-lg"
+                  }`}
                 >
-                  {project.linkLabel}
-                  <span aria-hidden>↗</span>
-                </a>
-              </div>
-            </article>
-          </Reveal>
-        ))}
+                  {project.title}
+                </h3>
+
+                <p
+                  className={`mt-3 text-pretty leading-relaxed text-fg-muted ${
+                    wide ? "max-w-2xl text-base" : "text-sm"
+                  }`}
+                >
+                  {project.description}
+                </p>
+
+                {/* Detail lines only on the lead cells, so the compact cells
+                    stay compact instead of every card reading identically. */}
+                {wide && (
+                  <ul className="mt-5 space-y-2">
+                    {project.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex gap-2.5 text-xs leading-relaxed text-fg-faint"
+                      >
+                        <span
+                          aria-hidden
+                          className="mt-[0.5rem] h-px w-3 flex-none bg-signal-500/60"
+                        />
+                        <span className="text-pretty">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <div className="mt-auto pt-7">
+                  <div className="flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <span key={tech} className="tag">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline mt-6 text-sm"
+                  >
+                    {project.linkLabel}
+                    <span aria-hidden>↗</span>
+                  </a>
+                </div>
+              </article>
+            </Reveal>
+          );
+        })}
       </div>
 
       <Reveal className="mt-12">

@@ -80,8 +80,8 @@ export default function ParticleField() {
         uTime: { value: 0 },
         uPointer: { value: new THREE.Vector2(0, 0) },
         uSize: { value: renderer.getPixelRatio() * 2.0 },
-        uColorLow: { value: new THREE.Color("#4A3520") },
-        uColorHigh: { value: new THREE.Color("#FFB273") },
+        uColorLow: { value: new THREE.Color("#4A1428") },
+        uColorHigh: { value: new THREE.Color("#FF7A96") },
       };
 
       const material = new THREE.ShaderMaterial({

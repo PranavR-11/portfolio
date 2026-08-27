@@ -59,7 +59,7 @@ export default function ArtGallery() {
               aria-label={`View ${art.title} full size`}
             >
               <Image
-                src={art.src}
+                src={art.thumb}
                 alt={art.title}
                 width={600}
                 height={800}

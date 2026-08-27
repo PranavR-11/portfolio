@@ -36,7 +36,7 @@ export default function Hero() {
           </span>
         </div>
 
-        <h1 className="mt-8 max-w-4xl text-balance pb-1 text-5xl font-semibold leading-[1.12] tracking-tightest opacity-0 animate-fade-up [animation-delay:200ms] sm:text-6xl md:text-7xl">
+        <h1 className="mt-8 max-w-[60rem] text-balance pb-2 text-[2.9rem] font-semibold leading-[1.08] tracking-tightest opacity-0 animate-fade-up [animation-delay:200ms] sm:text-6xl md:text-7xl">
           {headline.lead}{" "}
           <span className="italic text-signal-400">{headline.emphasis}</span>
         </h1>
