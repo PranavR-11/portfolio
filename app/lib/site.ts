@@ -16,6 +16,7 @@ export const profile = {
   name: "Pranav Rebala",
   role: "Forward Deployed Engineer",
   location: "Jersey City, NJ",
+  workAuth: "U.S. citizen, no sponsorship required",
   availability: "Open to forward deployed and applied AI roles",
   email: "navrebala@gmail.com",
   github: "https://github.com/PranavR-11",
@@ -107,6 +108,15 @@ export const experience = [
       "Analysed dealership workflows to find automation opportunities across scheduling, inventory search and customer support.",
     ],
     stack: ["Python", "LightFM", "LangChain", "LangGraph", "AWS", "Docker"],
+  },
+  {
+    company: "Babson Graduate Tech Club",
+    role: "Vice President, Operations",
+    period: "Sep 2024 to May 2025",
+    kind: "Leadership",
+    summary: "Ran operations for the graduate tech club alongside the MSBA.",
+    points: [],
+    stack: ["Wellesley, MA"],
   },
   {
     company: "Rezolve AI",
@@ -202,8 +212,23 @@ export const projects = [
     linkLabel: "Repository",
   },
   {
+    title: "What Spotify Actually Built",
+    category: "Writing",
+    year: "2026",
+    description:
+      "A deep dive arguing that the recommendation algorithm is the least interesting thing Spotify built. The real moat is 17 years of listening behaviour, which any AI system still needs as a grounding layer underneath it.",
+    points: [
+      "Read of Spotify's 2025 research output",
+      "Where personalisation stops being discovery and starts being a mirror",
+    ],
+    stack: ["Recommender Systems", "Analysis"],
+    // TODO: replace with the Medium URL. The lnkd.in shortlink does not resolve.
+    href: "https://medium.com/@navrebala",
+    linkLabel: "Read on Medium",
+  },
+  {
     title: "RCB Back-to-Back Title Analysis",
-    category: "Analytics",
+    category: "Writing",
     year: "2026",
     description:
       "Ball-by-ball Python pipeline over Cricsheet data behind a 7,300-word deep dive on how RCB went back to back, with five publication-grade visualisations.",
@@ -213,9 +238,9 @@ export const projects = [
       "Published as a long-form article",
     ],
     stack: ["Python", "Pandas", "Cricsheet", "Matplotlib"],
-    // TODO: swap for the Medium article URL once provided.
-    href: "https://github.com/PranavR-11",
-    linkLabel: "Repository",
+    // TODO: replace with the Medium URL.
+    href: "https://medium.com/@navrebala",
+    linkLabel: "Read on Medium",
   },
   {
     title: "LightweightMMM Attribution Pipeline",

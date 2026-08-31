@@ -24,9 +24,14 @@ export default function Contact() {
             Got something worth <span className="italic text-signal-400">building</span>?
           </h2>
 
+          <p className="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-fg-faint">
+            {profile.location} · {profile.workAuth}
+          </p>
+
           <p className="mt-6 max-w-prose text-pretty text-lg leading-relaxed text-fg-muted">
-            I&apos;m open to ML and data roles, and always happy to talk through a
-            problem, especially if it sits where models meet real users.
+            I&apos;m actively looking for forward deployed, applied AI and ML
+            engineering roles. Always happy to talk through a problem, especially
+            if it sits where models meet real users.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
