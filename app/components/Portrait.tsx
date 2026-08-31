@@ -9,9 +9,11 @@ import { profile } from "../lib/site";
  *
  * Renders nothing if the image fails to load, so the path can ship before the
  * file does and the hero degrades to its text-only composition instead of
- * showing a broken image. The headshot is on a light grey studio background,
- * so it gets a slight desaturation, an accent-tinted wash and a bottom fade to
- * sit on the near-black page rather than punching a bright rectangle in it.
+ * showing a broken image.
+ *
+ * The treatment is deliberately light: a touch of desaturation and a bottom
+ * fade into the page, no colour wash. That works for a dark, already-colourful
+ * shot without fighting it, and still settles a bright studio background.
  */
 export default function Portrait({
   variant,
@@ -39,7 +41,7 @@ export default function Portrait({
           width={160}
           height={160}
           onError={fail}
-          className="h-full w-full object-cover object-top saturate-[0.85]"
+          className="h-full w-full object-cover object-top"
         />
       </span>
     );
@@ -55,14 +57,9 @@ export default function Portrait({
           height={1100}
           priority
           onError={fail}
-          className="aspect-[4/5] w-full object-cover object-top saturate-[0.8] contrast-[1.05]"
+          className="aspect-[4/5] w-full object-cover object-top saturate-[0.95]"
         />
 
-        {/* Tie the studio grey to the page palette. */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-signal-600/10 mix-blend-overlay"
-        />
         {/* Fade the bottom edge into the section. */}
         <div
           aria-hidden
