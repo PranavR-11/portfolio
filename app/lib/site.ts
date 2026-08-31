@@ -44,8 +44,8 @@ export const cta = {
 
 /** Hero: headline stays at 2 lines desktop, subtext under 20 words. */
 export const headline = {
-  lead: "I put machine learning",
-  emphasis: "into production.",
+  lead: "I build AI systems that",
+  emphasis: "survive production.",
   sub: "I embed with the team that owns the problem, ship the system, and own the rollout and the outcome.",
 };
 

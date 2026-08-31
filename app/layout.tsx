@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Pranav Rebala",
+    "forward deployed engineer",
+    "applied AI engineer",
     "machine learning engineer",
     "data analyst",
     "RAG",
