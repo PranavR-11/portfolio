@@ -43,7 +43,7 @@ export const headline = {
 
 /** Real numbers, pulled from the experience and project sections below. */
 export const stats = [
-  { value: "14.2h", label: "median support resolution, down toward a 10 hour target" },
+  { value: "200+", label: "verified repair procedures routed by the diagnostic tool" },
   { value: "88.1%", label: "critical-event accuracy on flight log diagnosis" },
   { value: "15", label: "dealership locations running the recommendation rollout" },
   { value: "2", label: "peer-reviewed IEEE publications" },
@@ -81,7 +81,11 @@ export const experience = [
     summary:
       "Agentic AI and ML pipelines for drone flight diagnostics.",
     points: [
-      "Cut median support resolution time from 14.2 hours toward a 10 hour target. I embedded with the drone support agents to scope how they actually work, then shipped an AI diagnostic tool, now in daily use, that classifies incoming issues and serves the right one of 200+ verified repair procedures.",
+      // The resolution-time improvement is deliberately not stated. The resume
+      // says 48 hours toward a 3 hour target; LinkedIn says a 14.2 hour median
+      // toward a 10 hour target. Both are live documents and they do not
+      // reconcile, so no figure ships until one is confirmed.
+      "Embedded with the drone support agents to scope how they actually work, then shipped an AI diagnostic tool, now in daily use, that classifies incoming issues and serves the right one of 200+ verified repair procedures.",
       "Designed its retrieval and safety layer: semantic similarity, lexical scoring and domain-aware boosts fused into a single engine, with the LLM gated behind deterministic routing and schema-validated output that can never return a category outside the retrieved set, plus a knowledge-gap detector and an outcome feedback loop.",
       "Built a three-layer agentic diagnostic system (Planner, Generator, Evaluator) that ingests ML pipeline output, retrieves similar historical RCA documents through FAISS, and generates grounded failure narratives. The Evaluator applies hard gates and confidence scoring before anything reaches an engineer.",
       "Built an autonomous code agent with Bitbucket integration and RAG-based codebase retrieval that generates rule implementations with test coverage, opens pull requests with validated results, and routes complex changes to senior review through a structured escalation gate.",
