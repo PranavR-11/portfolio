@@ -389,12 +389,6 @@ export const publications = [
 
 export const certifications = [
   {
-    title: "AWS Certified Generative AI Developer (AIP-C01)",
-    issuer: "Amazon Web Services",
-    year: "In progress",
-    href: "https://aws.amazon.com/certification/",
-  },
-  {
     title: "Linux Kernel Development",
     issuer: "The Linux Foundation",
     year: "2022",
