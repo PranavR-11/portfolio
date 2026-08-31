@@ -14,10 +14,10 @@ export const asset = (path: string) =>
 
 export const profile = {
   name: "Pranav Rebala",
-  role: "ML Engineer & Data Analyst",
-  location: "Boston, MA",
-  availability: "Open to ML and data roles",
-  email: "pranav.rebala11@gmail.com",
+  role: "AI / ML Engineer",
+  location: "Jersey City, NJ",
+  availability: "Software Engineer, AI at General Aeronautics",
+  email: "navrebala@gmail.com",
   github: "https://github.com/PranavR-11",
   linkedin: "https://www.linkedin.com/in/pranavrebala/",
   resume: asset("/Pranav_Resume.pdf"),
@@ -37,92 +37,98 @@ export const cta = {
 export const headline = {
   lead: "I put machine learning",
   emphasis: "into production.",
-  sub: "Recommendation engines, RAG assistants and agentic systems that real users hit every day.",
+  sub: "Drone flight diagnostics, agentic tooling and recommendation systems that real users hit every day.",
 };
 
 /** Real numbers, pulled from the experience and project sections below. */
 export const stats = [
-  { value: "20K", label: "monthly requests served in production" },
-  { value: "3", label: "ML systems owned end to end" },
-  { value: "8,490", label: "player-seasons modelled for valuation" },
+  { value: "88.1%", label: "critical-event accuracy on flight fault classification" },
+  { value: "58,479", label: "MAVLink telemetry events classified across 3,718 flights" },
+  { value: "200+", label: "verified repair procedures routed by DART" },
   { value: "2", label: "peer-reviewed IEEE publications" },
 ];
 
 export const about = {
   paragraphs: [
-    "I started in computer science at PES University in Bangalore, spent three years building production systems for an automotive tech company, then took a Master's in Business Analytics at Babson to get sharper about the business end of the work.",
-    "The through-line is the same either way. I like the messy middle: the part where a model has to leave a notebook, survive real traffic, and actually change what somebody does on a Tuesday. Most of my work sits where machine learning, data engineering and product meet.",
+    "I studied computer science at PES University in Bangalore, specialising in machine intelligence and data science, then took a Master's in Business Analytics at Babson to get sharper about the business end of the work.",
+    "Since then I have worked on recommendation and RAG systems for auto dealerships, and now on drone flight diagnostics and internal agentic AI at General Aeronautics. The through-line is the messy middle: the part where a model has to leave a notebook, survive real traffic, and actually change what somebody does on a Tuesday.",
     "Outside of that I draw, follow far too much football, and speak English, Hindi, Telugu and Kannada.",
   ],
 };
 
 export const education = [
   {
-    period: "2024 to 2025",
+    period: "Aug 2024 to May 2025",
     school: "Babson College",
     degree: "MS, Business Analytics",
     location: "Wellesley, MA",
   },
   {
-    period: "2020 to 2024",
+    period: "Aug 2020 to May 2024",
     school: "PES University",
-    degree: "BS, Computer Science",
+    degree: "BS, Computer Science (Machine Intelligence and Data Science)",
     location: "Bangalore, India",
   },
 ];
 
 export const experience = [
   {
-    company: "Forfend Cybernatics",
-    role: "Software Developer",
-    period: "Sep 2022 to Jul 2025",
+    company: "General Aeronautics",
+    role: "Software Engineer, AI",
+    period: "Mar 2026 to Present",
     kind: "Full-time",
     summary:
-      "Owned three production ML systems for automobile dealerships, from model design through deployment.",
+      "Drone flight diagnostics and internal agentic AI systems.",
     points: [
-      "Built a LightFM hybrid recommender behind a Dockerized FastAPI service on AWS, predicting vehicle preferences from sales and behavioural history. 20K monthly kiosk and sales requests, 60% higher engagement, 22% higher conversion.",
-      "Shipped a generative AI assistant using intent classification and LangChain RAG retrievers for bookings, inventory queries and expert help, cutting support operating costs by half.",
-      "Designed an agentic shop-floor system pairing Prophet and XGBoost forecasting with RL-based bay allocation, orchestrated through LangGraph and surfaced in a live dashboard. 60% better operational efficiency.",
+      // NOTE: DART's resolution-time metric is deliberately omitted. The resume
+      // (48h toward a 3h target) and the working notes (median 14.2h toward a
+      // 10h target) disagree, and the two are not roundable to each other.
+      // The claim that the LLM sits behind deterministic routing is also left
+      // out, since the DART README describes a model call on every query.
+      // Both go back in once the source of truth is settled.
+      "Built DART, an internal diagnostic tool that routes support issues to the right one of 200+ verified repair procedures. Each source PDF is processed once into structured numbered steps with page and figure mapping, so whole documents never reach the model and steps are never invented.",
+      "Hybrid semantic and keyword retrieval builds a candidate shortlist, an LLM classifier picks the single matching issue or flags a knowledge-base gap, and every answer ships with a citation. Escalations auto-route to four L3 teams.",
+      "Trained a Transformer and XGBoost hybrid that classifies 58,479 MAVLink telemetry events across 3,718 flights into 40+ fault categories at 88.1% critical-event accuracy.",
+      "Built a four-agent autonomous bug-fixing pipeline on LangGraph and Fargate: three human approval gates as durable interrupts, a CC0 to CC6 scoring rubric, 12 evaluator safety rules and mutation testing behind a 0.80 pass threshold.",
+      "Ran false-negative analysis on the ArduPilot FAT model across 135 labeled flights, producing validated rule corrections and a field report for L2 and L3 engineers.",
     ],
-    stack: ["Python", "FastAPI", "LangChain", "LangGraph", "AWS", "Docker"],
+    stack: ["Python", "FastAPI", "OpenAI API", "LangGraph", "AWS Fargate", "SQLite"],
   },
   {
-    company: "Rezolve AI",
-    role: "Full Stack Intern",
-    period: "Jan to Feb 2024",
-    kind: "Internship",
+    company: "Forfend Cybernatics",
+    role: "ML Engineer",
+    period: "Jun 2025 to Mar 2026",
+    kind: "Remote",
     summary:
-      "Led a small team building leadership dashboards over Azure-hosted financial data.",
+      "Recommendation and retrieval systems for a network of auto dealerships.",
     points: [
-      "Delivered real-time dashboards for Wipro's BFS delivery vertical, giving leadership visibility into metrics across a 230,000 person global workforce.",
-      "Added role-based access controls for compliant data visibility, and streamlined ingestion to cut manual reporting time by 40%.",
+      "Deployed a collaborative-filtering recommendation engine to 15 external dealership locations serving 20,000+ monthly users, with A/B tested flows and ranking features.",
+      "Built a RAG customer-service chatbot handling appointment booking, inventory lookups and FAQ resolution, with retrieval evaluation and monitored fallback handling.",
+      "Shipped a LangGraph agentic workflow pairing Prophet and XGBoost demand forecasting with automated resource allocation, deployed to AWS on Docker with real-time monitoring.",
     ],
-    stack: ["Azure", "React", "SQL", "RBAC"],
+    stack: ["Python", "LangGraph", "Prophet", "XGBoost", "AWS", "Docker"],
   },
   {
     company: "Wipro Ltd",
-    role: "Full Stack Intern",
+    role: "Full Stack Development Intern",
     period: "Jul to Oct 2023",
     kind: "Internship",
-    summary:
-      "Built and deployed an internal resource-tracking portal end to end.",
+    summary: "Financial reporting infrastructure for internal leadership.",
     points: [
-      "Developed the React and Vite dashboard frontend with a Node and Express API over MS SQL, improving how teams tracked project utilisation.",
-      "Handled Azure deployment with Functions for dynamic scaling, and integrated Azure AD for granular role-based access.",
+      "Built a real-time financial reporting dashboard on Azure SQL with role-based access for 1,200+ users, cutting reporting lag from two days to two hours.",
     ],
-    stack: ["React", "Node.js", "Express", "MS SQL", "Azure"],
+    stack: ["Azure SQL", "React", "RBAC"],
   },
   {
     company: "Flutura Business Solutions",
     role: "Data Science Intern",
     period: "Jun to Aug 2022",
     kind: "Internship",
-    summary: "Drone telemetry analysis and digital-twin prototyping.",
+    summary: "Predictive maintenance on industrial IoT telemetry.",
     points: [
-      "Analysed drone flight and sensor data in Engineering Workbench, clustering failure cases to surface the patterns behind them.",
-      "Prototyped a drone AR environment in Unity with Vuforia, simulating swarm scenarios with radar-zone detection and per-drone inspection.",
+      "Built predictive-maintenance models on IoT sensor data from 500+ industrial devices, reaching 85% fault-detection accuracy.",
     ],
-    stack: ["Python", "Clustering", "Unity", "Vuforia"],
+    stack: ["Python", "IoT", "Predictive Modelling"],
   },
 ];
 
@@ -130,13 +136,13 @@ export const featured = {
   title: "FootballBase",
   subtitle: "Real-time football analytics, answered in plain language",
   summary:
-    "A multilingual RAG assistant that turns raw match datasets into conversational insight: cited answers, generated charts, and exportable assets, streamed as they are produced.",
+    "Natural-language question answering over 8,900+ football records, with semantic search, retrieval evaluation, and charts generated on demand.",
   why: "I wanted one workflow where an analyst asks a plain-language question and gets back a data-backed answer, a chart, and something they can drop straight into a deck. No notebook, no SQL, no waiting.",
   architecture: [
     {
       label: "Frontend",
       detail:
-        "Next.js and React with a streaming UI that renders Chart.js visuals as WebSocket updates arrive.",
+        "React frontend, built from scratch, with a streaming UI that renders charts as results arrive.",
     },
     {
       label: "Backend",
@@ -146,7 +152,7 @@ export const featured = {
     {
       label: "Retrieval",
       detail:
-        "FAISS over Sentence Transformer embeddings, with fuzzy matching for entity resolution and MCP coordinating tool invocation.",
+        "LangChain with FAISS semantic search over 8,900+ records, plus retrieval evaluation and MCP-coordinated chart generation.",
     },
     {
       label: "Data ops",
@@ -155,18 +161,49 @@ export const featured = {
     },
   ],
   capabilities: [
-    "Cited answers with inline sources",
-    "Charts generated on demand, exportable as PNG",
-    "Automatic language detection across ten languages",
-    "Sub-second repeat queries via cache",
+    "Natural-language Q&A over 8,900+ football records",
+    "FAISS semantic search with retrieval evaluation",
+    "Dynamic chart generation coordinated through MCP",
+    "React frontend built from scratch",
   ],
   video: asset("/LinkedinClip.mp4"),
   poster: asset("/LinkedinClip-Cover.jpg"),
   demo: "https://footballbase.netlify.app",
-  stack: ["Next.js", "FastAPI", "LangChain", "FAISS", "MCP", "Docker"],
+  stack: ["React", "LangChain", "FAISS", "MCP", "Python"],
 };
 
 export const projects = [
+  {
+    title: "The Dead Collector's Estate",
+    category: "AI / ML",
+    year: "2026",
+    description:
+      "A multi-agent mystery game: five characters held in a stateful LangGraph system, each with their own RAG store, who you interrogate to solve the case.",
+    points: [
+      "Character-specific retrieval stores and tool-calling flows",
+      "Interrogation scoring with persistent session memory",
+      "Stateful five-agent orchestration in LangGraph",
+    ],
+    stack: ["Python", "LangGraph", "OpenAI", "RAG", "FastAPI"],
+    href: "https://github.com/PranavR-11",
+    linkLabel: "Repository",
+  },
+  {
+    title: "RCB Back-to-Back Title Analysis",
+    category: "Analytics",
+    year: "2026",
+    description:
+      "Ball-by-ball Python pipeline over Cricsheet data behind a 7,300-word deep dive on how RCB went back to back, with five publication-grade visualisations.",
+    points: [
+      "Full ball-by-ball ingestion and transformation pipeline",
+      "Five publication-grade visualisations",
+      "Published as a long-form article",
+    ],
+    stack: ["Python", "Pandas", "Cricsheet", "Matplotlib"],
+    // TODO: swap for the Medium article URL once provided.
+    href: "https://github.com/PranavR-11",
+    linkLabel: "Repository",
+  },
   {
     title: "LightweightMMM Attribution Pipeline",
     category: "Data Science",
@@ -322,6 +359,12 @@ export const publications = [
 ];
 
 export const certifications = [
+  {
+    title: "AWS Certified Generative AI Developer (AIP-C01)",
+    issuer: "Amazon Web Services",
+    year: "In progress",
+    href: "https://aws.amazon.com/certification/",
+  },
   {
     title: "Linux Kernel Development",
     issuer: "The Linux Foundation",
