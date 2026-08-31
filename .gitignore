@@ -15,7 +15,7 @@
 
 # next.js
 /.next/
-# /out/  # Commented out to track static exports for GitHub Pages
+/out/
 
 # production
 /build

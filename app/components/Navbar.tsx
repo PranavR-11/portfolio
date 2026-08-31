@@ -1,138 +1,140 @@
 "use client";
-import { Link as ScrollLink, animateScroll } from "react-scroll";
-import { useState, useEffect } from "react";
+
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { cta, navLinks, profile } from "../lib/site";
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState<string>("hero");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("hero");
+  const [open, setOpen] = useState(false);
+  const sentinel = useRef<HTMLDivElement>(null);
 
+  /**
+   * Condensed-nav state comes from a sentinel crossing the top of the
+   * viewport, not a scroll listener. A scroll handler fires on every frame
+   * and re-renders the tree with it.
+   */
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const node = sentinel.current;
+    if (!node) return;
 
-      const sections = [
-        "hero",
-        "about",
-        "skills",
-        "education",
-        "workex",
-        "projects",
-        "publications",
-        "certifications",
-        "artgallery",
-      ];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (
-          element &&
-          element.getBoundingClientRect().top <= 150 &&
-          element.getBoundingClientRect().bottom >= 150
-        ) {
-          setActiveSection(section);
-          break;
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => setScrolled(!entry.isIntersecting),
+      { rootMargin: "-24px 0px 0px 0px", threshold: 0 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
   }, []);
 
-  const navLinks = [
-    { name: "HOME", id: "hero" },
-    { name: "ABOUT", id: "about" },
-    { name: "SKILLS", id: "skills" },
-    { name: "EDUCATION", id: "education" },
-    { name: "WORK", id: "workex" },
-    { name: "PROJECTS", id: "projects" },
-    { name: "PUBLICATIONS", id: "publications" },
-    { name: "CERTS", id: "certifications" },
-    { name: "GALLERY", id: "artgallery" },
-  ];
+  // Track the section occupying the middle of the viewport.
+  useEffect(() => {
+    const ids = ["hero", ...navLinks.map((l) => l.id), "contact"];
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const hit = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (hit) setActive(hit.target.id);
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      scrolled ? 'glass-card shadow-lg shadow-cyber-primary/10' : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo/Brand */}
-          <div
-            className="cursor-pointer group"
-            onClick={() => animateScroll.scrollToTop()}
-          >
-            <h1 className="text-xl sm:text-2xl font-bold font-mono">
-              <span className="text-cyber-primary group-hover:text-glow transition-all">&lt;</span>
-              <span className="text-white group-hover:text-cyber-primary transition-colors">PR</span>
-              <span className="text-cyber-primary group-hover:text-glow transition-all">/&gt;</span>
-            </h1>
-          </div>
+    <>
+      <div ref={sentinel} aria-hidden className="absolute top-0 h-px w-full" />
 
-          {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center justify-center gap-1 flex-1">
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <ScrollLink
-                to={link.id}
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-80}
-                className={`cursor-pointer font-mono text-sm px-4 py-2 rounded-md transition-all duration-300 ${
-                  activeSection === link.id
-                    ? "text-cyber-primary bg-cyber-primary/10 neon-border"
-                    : "text-gray-300 hover:text-cyber-primary hover:bg-cyber-primary/5"
-                }`}
-              >
-                {link.name}
-              </ScrollLink>
-            </li>
-          ))}
-        </ul>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-cyber-primary hover:text-cyber-secondary focus:outline-none transition-colors p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <div
-        className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          scrolled
+            ? "border-b border-white/[0.07] bg-ink-950/80 backdrop-blur-xl"
+            : "border-b border-transparent"
         }`}
       >
-        <div className="glass-card mx-4 mb-4 rounded-lg p-4">
-          <ul className="space-y-2">
+        <nav className="mx-auto flex h-16 max-w-content items-center justify-between px-6">
+          <a href="#hero" className="group flex items-center gap-2.5" aria-label="Back to top">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] font-mono text-xs font-medium transition-colors group-hover:border-signal-500/50 group-hover:text-signal-400">
+              PR
+            </span>
+            <span className="hidden text-sm font-medium tracking-snug sm:block">
+              {profile.name}
+            </span>
+          </a>
+
+          <ul className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => (
               <li key={link.id}>
-                <ScrollLink
-                  to={link.id}
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  offset={-80}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block cursor-pointer font-mono text-sm px-4 py-3 rounded-md transition-all duration-300 ${
-                    activeSection === link.id
-                      ? "text-cyber-primary bg-cyber-primary/10 neon-border"
-                      : "text-gray-300 hover:text-cyber-primary hover:bg-cyber-primary/5"
+                <a
+                  href={`#${link.id}`}
+                  className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
+                    active === link.id ? "text-fg" : "text-fg-muted hover:text-fg"
                   }`}
                 >
-                  <span className="text-cyber-secondary mr-2">&gt;</span>
-                  {link.name}
-                </ScrollLink>
+                  {active === link.id && (
+                    <span className="absolute inset-0 rounded-full border border-white/10 bg-white/[0.05]" />
+                  )}
+                  <span className="relative">{link.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-2">
+            <a
+              href="#contact"
+              className="hidden whitespace-nowrap rounded-full bg-fg px-5 py-2 text-sm font-medium text-ink-950 transition-colors hover:bg-white sm:inline-flex"
+            >
+              {cta.contact}
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="rounded-full border border-white/10 p-2 text-fg md:hidden"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </nav>
+
+        <div
+          className={`overflow-hidden border-t border-white/[0.07] bg-ink-950/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 md:hidden ${
+            open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <ul className="px-6 py-2">
+            {[...navLinks, { label: cta.contact, id: "contact" }].map((link) => (
+              <li key={link.id} className="border-b border-white/[0.05] last:border-0">
+                <a
+                  href={`#${link.id}`}
+                  onClick={() => setOpen(false)}
+                  className="block py-4 text-base text-fg-muted transition-colors hover:text-fg"
+                >
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>
         </div>
-      </div>
-    </nav>
+      </header>
+    </>
   );
 }
