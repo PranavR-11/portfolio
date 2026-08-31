@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import ParticleField from "./ParticleField";
+import Portrait from "./Portrait";
 import { cta, headline, profile } from "../lib/site";
 
 /**
@@ -9,6 +11,8 @@ import { cta, headline, profile } from "../lib/site";
  * stuffed in here.
  */
 export default function Hero() {
+  const [hasPhoto, setHasPhoto] = useState(true);
+
   return (
     <section
       id="hero"
@@ -24,10 +28,16 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_75%_at_50%_30%,transparent_38%,rgba(8,8,10,0.62)_78%,#08080A_100%)]"
       />
 
-      <div className="relative mx-auto w-full max-w-content">
+      <div
+        className={`relative mx-auto grid w-full max-w-content items-center gap-12 lg:gap-20 ${
+          hasPhoto ? "md:grid-cols-[1.35fr_1fr]" : ""
+        }`}
+      >
+        <div>
         {/* Availability: a real state, so the dot earns its place. Static,
             because a pulse would not communicate anything the dot does not. */}
-        <div className="animate-fade-up opacity-0 [animation-delay:100ms]">
+        <div className="flex items-center gap-4 opacity-0 animate-fade-up [animation-delay:100ms]">
+          <Portrait variant="chip" onFail={() => setHasPhoto(false)} />
           <span className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-signal-500" />
             <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-fg-muted">
@@ -36,7 +46,7 @@ export default function Hero() {
           </span>
         </div>
 
-        <h1 className="mt-8 max-w-[60rem] text-balance pb-2 text-[2.9rem] font-semibold leading-[1.08] tracking-tightest opacity-0 animate-fade-up [animation-delay:200ms] sm:text-6xl md:text-7xl">
+        <h1 className="mt-8 max-w-[60rem] text-balance pb-2 text-[2.9rem] font-semibold leading-[1.08] tracking-tightest opacity-0 animate-fade-up [animation-delay:200ms] sm:text-6xl">
           {headline.lead}{" "}
           <span className="italic text-signal-400">{headline.emphasis}</span>
         </h1>
@@ -57,6 +67,11 @@ export default function Hero() {
           >
             {cta.resume}
           </a>
+        </div>
+        </div>
+
+        <div className="opacity-0 animate-fade-up [animation-delay:560ms]">
+          <Portrait variant="panel" onFail={() => setHasPhoto(false)} />
         </div>
       </div>
     </section>

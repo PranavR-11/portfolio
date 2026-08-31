@@ -22,6 +22,12 @@ export const profile = {
   github: "https://github.com/PranavR-11",
   linkedin: "https://www.linkedin.com/in/pranavrebala/",
   resume: asset("/Pranav_Resume.pdf"),
+  /**
+   * Portrait for the hero. The component hides it if the file is missing, so
+   * this path can be live before the image lands: drop a headshot at
+   * public/headshot.jpg and it appears with no code change.
+   */
+  photo: asset("/headshot.jpg"),
 };
 
 /**
