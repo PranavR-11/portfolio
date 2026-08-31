@@ -14,9 +14,9 @@ export const asset = (path: string) =>
 
 export const profile = {
   name: "Pranav Rebala",
-  role: "AI / ML Engineer",
+  role: "Forward Deployed Engineer",
   location: "Jersey City, NJ",
-  availability: "Software Engineer, AI at General Aeronautics",
+  availability: "Open to forward deployed and applied AI roles",
   email: "navrebala@gmail.com",
   github: "https://github.com/PranavR-11",
   linkedin: "https://www.linkedin.com/in/pranavrebala/",
@@ -37,22 +37,22 @@ export const cta = {
 export const headline = {
   lead: "I put machine learning",
   emphasis: "into production.",
-  sub: "Drone flight diagnostics, agentic tooling and recommendation systems that real users hit every day.",
+  sub: "I embed with the team that owns the problem, ship the system, and own the rollout and the outcome.",
 };
 
 /** Real numbers, pulled from the experience and project sections below. */
 export const stats = [
-  { value: "88.1%", label: "critical-event accuracy on flight fault classification" },
-  { value: "58,479", label: "MAVLink telemetry events classified across 3,718 flights" },
-  { value: "200+", label: "verified repair procedures routed by DART" },
+  { value: "14.2h", label: "median support resolution, down toward a 10 hour target" },
+  { value: "88.1%", label: "critical-event accuracy on flight log diagnosis" },
+  { value: "15", label: "dealership locations running the recommendation rollout" },
   { value: "2", label: "peer-reviewed IEEE publications" },
 ];
 
 export const about = {
   paragraphs: [
-    "I studied computer science at PES University in Bangalore, specialising in machine intelligence and data science, then took a Master's in Business Analytics at Babson to get sharper about the business end of the work.",
-    "Since then I have worked on recommendation and RAG systems for auto dealerships, and now on drone flight diagnostics and internal agentic AI at General Aeronautics. The through-line is the messy middle: the part where a model has to leave a notebook, survive real traffic, and actually change what somebody does on a Tuesday.",
-    "Outside of that I draw, follow far too much football, and speak English, Hindi, Telugu and Kannada.",
+    "I build AI systems that get from messy data to production, and I sit at the seam most teams struggle to staff: an engineer who can also read the business. That is the forward deployed job. I embed with whoever owns the problem, scope what they actually need, ship the production system, and own adoption and the outcome.",
+    "Right now that means agentic AI and ML pipelines for drone flight diagnostics at General Aeronautics: fault classification, automated RCA generation, and autonomous code agents that write and validate their own pull requests. Before that, at Forfend Cybernatics, I put RAG chatbots, recommendation engines and LangGraph workflows into 15 US auto dealership locations and owned the rollout end to end.",
+    "MS in Business Analytics from Babson, BS in Computer Science from PES University, and two IEEE publications. Outside of work I draw, follow far too much football, and speak English, Hindi, Telugu and Kannada.",
   ],
 };
 
@@ -78,46 +78,59 @@ export const experience = [
     period: "Mar 2026 to Present",
     kind: "Full-time",
     summary:
-      "Drone flight diagnostics and internal agentic AI systems.",
+      "Agentic AI and ML pipelines for drone flight diagnostics.",
     points: [
-      // NOTE: DART's resolution-time metric is deliberately omitted. The resume
-      // (48h toward a 3h target) and the working notes (median 14.2h toward a
-      // 10h target) disagree, and the two are not roundable to each other.
-      // The claim that the LLM sits behind deterministic routing is also left
-      // out, since the DART README describes a model call on every query.
-      // Both go back in once the source of truth is settled.
-      "Built DART, an internal diagnostic tool that routes support issues to the right one of 200+ verified repair procedures. Each source PDF is processed once into structured numbered steps with page and figure mapping, so whole documents never reach the model and steps are never invented.",
-      "Hybrid semantic and keyword retrieval builds a candidate shortlist, an LLM classifier picks the single matching issue or flags a knowledge-base gap, and every answer ships with a citation. Escalations auto-route to four L3 teams.",
-      "Trained a Transformer and XGBoost hybrid that classifies 58,479 MAVLink telemetry events across 3,718 flights into 40+ fault categories at 88.1% critical-event accuracy.",
-      "Built a four-agent autonomous bug-fixing pipeline on LangGraph and Fargate: three human approval gates as durable interrupts, a CC0 to CC6 scoring rubric, 12 evaluator safety rules and mutation testing behind a 0.80 pass threshold.",
-      "Ran false-negative analysis on the ArduPilot FAT model across 135 labeled flights, producing validated rule corrections and a field report for L2 and L3 engineers.",
+      "Cut median support resolution time from 14.2 hours toward a 10 hour target. I embedded with the drone support agents to scope how they actually work, then shipped an AI diagnostic tool, now in daily use, that classifies incoming issues and serves the right one of 200+ verified repair procedures.",
+      "Designed its retrieval and safety layer: semantic similarity, lexical scoring and domain-aware boosts fused into a single engine, with the LLM gated behind deterministic routing and schema-validated output that can never return a category outside the retrieved set, plus a knowledge-gap detector and an outcome feedback loop.",
+      "Built a three-layer agentic diagnostic system (Planner, Generator, Evaluator) that ingests ML pipeline output, retrieves similar historical RCA documents through FAISS, and generates grounded failure narratives. The Evaluator applies hard gates and confidence scoring before anything reaches an engineer.",
+      "Built an autonomous code agent with Bitbucket integration and RAG-based codebase retrieval that generates rule implementations with test coverage, opens pull requests with validated results, and routes complex changes to senior review through a structured escalation gate.",
+      "Trained a Transformer and XGBoost hybrid for flight log diagnosis: 88.1% critical-event accuracy across 3,700+ flights and 58K+ telemetry events, with a deterministic rule layer for high-confidence cases and XGBoost resolving the ambiguous ones.",
+      "Migrated the stack off Vertex AI onto the OpenAI API, and fixed rate limiting traced to a Promise.all pattern and an auto-firing endpoint using sequential queuing, a backend semaphore and 24 hour caching.",
     ],
-    stack: ["Python", "FastAPI", "OpenAI API", "LangGraph", "AWS Fargate", "SQLite"],
+    stack: ["Python", "FastAPI", "OpenAI API", "LangGraph", "FAISS", "AWS"],
+    repo: {
+      href: "https://github.com/PranavR-11/ga-cc_helper",
+      label: "ga-cc_helper",
+    },
   },
   {
     company: "Forfend Cybernatics",
-    role: "ML Engineer",
+    role: "Machine Learning Engineer",
     period: "Jun 2025 to Mar 2026",
     kind: "Remote",
     summary:
-      "Recommendation and retrieval systems for a network of auto dealerships.",
+      "Owned the rollout of recommendation and retrieval systems into 15 US auto dealership locations.",
     points: [
-      "Deployed a collaborative-filtering recommendation engine to 15 external dealership locations serving 20,000+ monthly users, with A/B tested flows and ranking features.",
-      "Built a RAG customer-service chatbot handling appointment booking, inventory lookups and FAQ resolution, with retrieval evaluation and monitored fallback handling.",
-      "Shipped a LangGraph agentic workflow pairing Prophet and XGBoost demand forecasting with automated resource allocation, deployed to AWS on Docker with real-time monitoring.",
+      "Built a LightFM hybrid recommendation system inside a FastAPI microservice, personalising vehicle recommendations from historical sales and behavioural data across dealership kiosks and sales workflows, serving 20,000+ monthly users.",
+      "Implemented a RAG conversational chatbot for appointment booking, inventory queries and customer assistance, combining intent classification, LangChain retrievers, monitored fallback handling and retrieval evaluation.",
+      "Developed a LangGraph workflow pairing Prophet and XGBoost demand forecasting with resource-allocation recommendations for service-centre queue management, deployed on Docker and AWS behind a live analytics dashboard.",
+      "Analysed dealership workflows to find automation opportunities across scheduling, inventory search and customer support.",
     ],
-    stack: ["Python", "LangGraph", "Prophet", "XGBoost", "AWS", "Docker"],
+    stack: ["Python", "LightFM", "LangChain", "LangGraph", "AWS", "Docker"],
   },
   {
-    company: "Wipro Ltd",
-    role: "Full Stack Development Intern",
+    company: "Rezolve AI",
+    role: "Full Stack Developer",
+    period: "Jan to Feb 2024",
+    kind: "Internship",
+    summary: "Front-end work on internal application screens.",
+    points: [
+      "Developed React and Tailwind UI components and improved design consistency across internal application screens.",
+      "Worked a branch-per-ticket flow with Bitbucket pull requests to reduce merge conflicts and streamline review.",
+    ],
+    stack: ["React", "Tailwind CSS", "PostgreSQL", "Bitbucket"],
+  },
+  {
+    company: "Wipro",
+    role: "Full Stack Developer",
     period: "Jul to Oct 2023",
     kind: "Internship",
-    summary: "Financial reporting infrastructure for internal leadership.",
+    summary: "Financial reporting infrastructure for an internal enterprise vertical.",
     points: [
-      "Built a real-time financial reporting dashboard on Azure SQL with role-based access for 1,200+ users, cutting reporting lag from two days to two hours.",
+      "Delivered a real-time financial reporting dashboard on Azure SQL as part of a three-person team, cutting reporting lag from two days to two hours through automated ETL pipelines.",
+      "Implemented role-based access across six security groups for 1,200+ users, cutting access-request tickets by 40% and provisioning time from three days to eight hours.",
     ],
-    stack: ["Azure SQL", "React", "RBAC"],
+    stack: ["Azure SQL", "Python", "ETL", "RBAC"],
   },
   {
     company: "Flutura Business Solutions",

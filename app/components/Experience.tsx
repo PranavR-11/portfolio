@@ -52,6 +52,7 @@ export default function Experience() {
                 {job.summary}
               </p>
 
+              {job.points.length > 0 && (
               <ul className="mt-5 max-w-3xl space-y-3">
                 {job.points.map((point) => (
                   <li
@@ -66,13 +67,26 @@ export default function Experience() {
                   </li>
                 ))}
               </ul>
+              )}
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap items-center gap-2">
                 {job.stack.map((tech) => (
                   <span key={tech} className="tag">
                     {tech}
                   </span>
                 ))}
+
+                {"repo" in job && job.repo && (
+                  <a
+                    href={job.repo.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline ml-2 font-mono text-xs"
+                  >
+                    {job.repo.label}
+                    <span aria-hidden>↗</span>
+                  </a>
+                )}
               </div>
             </article>
           </Reveal>
