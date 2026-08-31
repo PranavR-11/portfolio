@@ -28,6 +28,8 @@ export const profile = {
    * public/headshot.jpg and it appears with no code change.
    */
   photo: asset("/headshot.jpg"),
+  /** Square face crop, so the small mobile circle reads as a portrait. */
+  photoAvatar: asset("/headshot-avatar.jpg"),
 };
 
 /**

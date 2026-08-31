@@ -36,12 +36,12 @@ export default function Portrait({
     return (
       <span className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-full border border-white/10 md:hidden">
         <Image
-          src={profile.photo}
+          src={profile.photoAvatar}
           alt={profile.name}
-          width={160}
-          height={160}
+          width={240}
+          height={240}
           onError={fail}
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full object-cover"
         />
       </span>
     );
@@ -57,7 +57,7 @@ export default function Portrait({
           height={1100}
           priority
           onError={fail}
-          className="aspect-[4/5] w-full object-cover object-top saturate-[0.95]"
+          className="aspect-[4/5] w-full object-cover object-center saturate-[0.95]"
         />
 
         {/* Fade the bottom edge into the section. */}
