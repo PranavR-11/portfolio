@@ -43,7 +43,7 @@ export const headline = {
 
 /** Real numbers, pulled from the experience and project sections below. */
 export const stats = [
-  { value: "200+", label: "verified repair procedures routed by the diagnostic tool" },
+  { value: "48h → 3h", label: "support resolution time, cut toward a 3 hour target" },
   { value: "88.1%", label: "critical-event accuracy on flight log diagnosis" },
   { value: "15", label: "dealership locations running the recommendation rollout" },
   { value: "2", label: "peer-reviewed IEEE publications" },
@@ -81,11 +81,7 @@ export const experience = [
     summary:
       "Agentic AI and ML pipelines for drone flight diagnostics.",
     points: [
-      // The resolution-time improvement is deliberately not stated. The resume
-      // says 48 hours toward a 3 hour target; LinkedIn says a 14.2 hour median
-      // toward a 10 hour target. Both are live documents and they do not
-      // reconcile, so no figure ships until one is confirmed.
-      "Embedded with the drone support agents to scope how they actually work, then shipped an AI diagnostic tool, now in daily use, that classifies incoming issues and serves the right one of 200+ verified repair procedures.",
+      "Cut support resolution time from 48 hours toward a 3 hour target. I embedded with the drone support agents to scope how they actually work, then shipped an AI diagnostic tool, now in daily use, that classifies incoming issues and serves the right one of 400+ verified repair documents.",
       "Designed its retrieval and safety layer: semantic similarity, lexical scoring and domain-aware boosts fused into a single engine, with the LLM gated behind deterministic routing and schema-validated output that can never return a category outside the retrieved set, plus a knowledge-gap detector and an outcome feedback loop.",
       "Built a three-layer agentic diagnostic system (Planner, Generator, Evaluator) that ingests ML pipeline output, retrieves similar historical RCA documents through FAISS, and generates grounded failure narratives. The Evaluator applies hard gates and confidence scoring before anything reaches an engineer.",
       "Built an autonomous code agent with Bitbucket integration and RAG-based codebase retrieval that generates rule implementations with test coverage, opens pull requests with validated results, and routes complex changes to senior review through a structured escalation gate.",
@@ -216,34 +212,17 @@ export const projects = [
     linkLabel: "Repository",
   },
   {
-    title: "What Spotify Actually Built",
+    title: "When an Algorithm Knows Your Taste Better Than You Do",
     category: "Writing",
     year: "2026",
     description:
-      "A deep dive arguing that the recommendation algorithm is the least interesting thing Spotify built. The real moat is 17 years of listening behaviour, which any AI system still needs as a grounding layer underneath it.",
+      "A deep dive arguing that the recommendation algorithm is the least interesting thing Spotify built. The real moat is seventeen years of listening behaviour, which any AI system still needs as a grounding layer underneath it.",
     points: [
       "Read of Spotify's 2025 research output",
       "Where personalisation stops being discovery and starts being a mirror",
     ],
     stack: ["Recommender Systems", "Analysis"],
-    // TODO: replace with the Medium URL. The lnkd.in shortlink does not resolve.
-    href: "https://medium.com/@navrebala",
-    linkLabel: "Read on Medium",
-  },
-  {
-    title: "RCB Back-to-Back Title Analysis",
-    category: "Writing",
-    year: "2026",
-    description:
-      "Ball-by-ball Python pipeline over Cricsheet data behind a 7,300-word deep dive on how RCB went back to back, with five publication-grade visualisations.",
-    points: [
-      "Full ball-by-ball ingestion and transformation pipeline",
-      "Five publication-grade visualisations",
-      "Published as a long-form article",
-    ],
-    stack: ["Python", "Pandas", "Cricsheet", "Matplotlib"],
-    // TODO: replace with the Medium URL.
-    href: "https://medium.com/@navrebala",
+    href: "https://medium.com/@pranav.rebala11/what-happens-when-an-algorithm-knows-your-taste-better-than-you-do-f317229713dc",
     linkLabel: "Read on Medium",
   },
   {
